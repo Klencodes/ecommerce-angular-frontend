@@ -28,9 +28,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/ui.css",
+              "src/assets/fonts/fontawesome/css/all.min.css"            
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-2.0.0.min.js",
+              "src/assets/js/script.js",
+              "src/assets/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +131,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "frontend"
+    }
+  },
+  "defaultProject": "frontend",
+  "cli": {
+    "analytics": "7a70c754-b73f-4037-9cd5-78dd546d5f10"
+  }
 }
