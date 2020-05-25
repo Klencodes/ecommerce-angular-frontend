@@ -36,7 +36,6 @@
             ],
             "scripts": [
               "src/assets/js/jquery-2.0.0.min.js",
-              "src/assets/js/script.js",
               "src/assets/js/bootstrap.bundle.min.js"
             ]
           },
