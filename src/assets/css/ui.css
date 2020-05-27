@@ -443,11 +443,12 @@ p:last-child {
   .search-header .form-control, .search-header .custom-select {
     border-color: transparent; }
   .search-header select {
-    -ms-flex-preferred-size: 150px !important;
+    -ms-flex-preferred-size: 150px ;
         flex-basis: 150px !important;
     -webkit-box-flex: 0 !important;
         -ms-flex-positive: 0 !important;
-            flex-grow: 0 !important; }
+            flex-grow: 0 !important; 
+  }
 
 .widget-header {
   display: inline-block;
@@ -1000,10 +1001,11 @@ a[class*='card'] {
   color: #fff;
   background-color: #fa3434; }
 
-.price {
-  font-weight: 600;
-  color: #212529; }
-
+  .price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #212529;
+}
 .price-old {
   color: #969696;
   margin-left: 3px;

@@ -4,24 +4,29 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared/shared.module';
-import { ProfileComponent } from './components/account/profile/profile.component';
-import { OrderHistoryComponent } from './components/account/order-history/order-history.component';
-import { TransactionsComponent } from './components/account/transactions/transactions.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    OrderHistoryComponent,
-    TransactionsComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     SharedModule,
+    HttpClientModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot(),
+    FormsModule
+
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

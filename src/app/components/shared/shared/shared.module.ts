@@ -12,9 +12,9 @@ import { ProductDetailComponent } from '../../default-pages/product-detail/produ
 import { OrdersComponent } from '../../order/orders/orders.component';
 import { OrderDetailComponent } from '../../order/order-detail/order-detail.component';
 import { ResetPasswordComponent } from '../../setup/reset-password/reset-password.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { OrderHistoryComponent } from '../../account-detail/order-history/order-history.component';
+import { TransactionsComponent } from '../../account-detail/transactions/transactions.component';
+import { AccountComponent } from '../../account-detail/account/account.component';
 
 
 
@@ -32,6 +32,9 @@ import { BrowserModule } from '@angular/platform-browser';
     ResetPasswordComponent,
     FooterComponent,
     HeaderComponent,
+    AccountComponent,
+    OrderHistoryComponent,
+    TransactionsComponent
   ],
   imports: [
     CommonModule
@@ -47,7 +50,10 @@ import { BrowserModule } from '@angular/platform-browser';
     ProductDetailComponent,
     OrdersComponent,
     OrderDetailComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    AccountComponent,
+    OrderHistoryComponent,
+    TransactionsComponent
 
   ],
   exports: [

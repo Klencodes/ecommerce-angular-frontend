@@ -8,17 +8,24 @@ import { ShopCatComponent } from './components/default-pages/shop-cat/shop-cat.c
 import { SignupComponent } from './components/setup/signup/signup.component';
 import { LoginComponent } from './components/setup/login/login.component';
 import { ResetPasswordComponent } from './components/setup/reset-password/reset-password.component';
+import { AccountComponent } from './components/account-detail/account/account.component';
+import { OrderHistoryComponent } from './components/account-detail/order-history/order-history.component';
+import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
 
 
 const routes: Routes = [
   { path: '', component : ShopComponent},
-  { path: 'product', component: ProductDetailComponent },
+  { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cat/:id', component: ShopCatComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'reset-password', component: ResetPasswordComponent }
+  { path: 'reset-password', component: ResetPasswordComponent },
+  {path: 'account', component : AccountComponent, children: [
+    {path: 'orders', component : OrderHistoryComponent},
+    {path: 'transactions', component : TransactionsComponent}
+  ]},
 ];
 
 @NgModule({

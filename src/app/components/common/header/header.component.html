@@ -2,13 +2,13 @@
   <section class="header-main border-bottom">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-xl-2 col-lg-3 col-md-12">
+        <div class="col-sm-3">
           <a routerLink="/" class="brand-wrap">
             <img class="logo" src="assets/img/logo.png">
           </a>
         </div>
-        <div class="col-xl-6 col-lg-5 col-md-6">
-          <form action="#" class="search-header">
+        <div class="col-xl-6 col-lg-6">
+          <form class="search-header search-header-my">
             <div class="input-group w-100">
               <select class="custom-select border-right" name="category_name">
                 <option value="">All type</option>
@@ -26,85 +26,60 @@
             </div>
           </form>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-6">
-          <div class="widgets-wrap float-md-right">
+        <!-- CART AND USER PROFILE ON MEDIA 993 OR MORE -->
+        <div class="col-lg-3 col-md-12 col-sm-12 widget-pull-right">
+          <div class="widgets-wrap float-right">
             <div class="widget-header mr-3">
-              <a href="#" class="widget-view">
+              <a class="widget-view">
                 <div class="icon-area">
                   <i class="fa fa-user"></i>
-                  <span class="notify">3</span>
+                  <a routerLink="/profile"><i class="fa fa-user-o"></i></a>
                 </div>
-                <small class="text"> My profile </small>
-              </a>
-            </div>
-            <div class="widget-header mr-3">
-              <a href="#" class="widget-view">
-                <div class="icon-area">
-                  <i class="fa fa-comment-dots"></i>
-                  <span class="notify">1</span>
-                </div>
-                <small class="text"> Message </small>
-              </a>
-            </div>
-            <div class="widget-header mr-3">
-              <a href="#" class="widget-view">
-                <div class="icon-area">
-                  <i class="fa fa-store"></i>
-                </div>
-                <small class="text"> Orders </small>
+                <small class="text">  {{authState === false ? 'Login' : 'My account'}} </small>
               </a>
             </div>
             <div class="widget-header">
-              <a href="#" class="widget-view">
-
-                <div class="dropdown">
-                  <a href="#" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <a class="widget-view">
+                <div class="dropdown cart-ps">
+                  <a  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <div class="icon-area">
                       <i class="fa fa-shopping-cart"></i>
+                      <span class="notify">
+                        <div class="qty">{{cartData.data[0].numInCart !== 0 ? cartData.data.length : 0}}</div>
+                      </span>
                     </div>
                     <small class="text"> Cart </small>
                   </a>
-                  <div class="dropdown-menu p-3 dropdown-menu-right"
-                    style="min-width: 280px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(185px, 38px, 0px);"
-                    x-placement="bottom-end">
-                    <figure class="itemside mb-3">
-                      <div class="aside"><img src="assets/img/items/1.jpg" class="img-sm border"></div>
+                  <div class="dropdown-menu p-3 dropdown-menu-right cart-ps-items"
+                   *ngIf="cartData.data[0].numInCart !== 0">
+                   <div class="pull-left">
+                    <h6>{{cartData.data[0].numInCart !== 0 ? cartData.data.length: 0 }} Item(s) selected</h6>
+                   </div>
+                    <figure class="itemside mb-3" *ngFor="let c of cartData.data; let i=index">
+                      <div class="aside">
+                        <img [src]="c.product.image" alt="c.product.name" class="img-sm border">
+                      </div>
                       <figcaption class="info align-self-center">
-                        <p class="title">Name of item nice iteme</p>
-                        <a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-                        <div class="price">$250</div> <!-- price-wrap.// -->
+                        <p class="title">{{c.product.name}}</p>
+                        <a (click)="cartService.DeleteProductFromCart(i)" class="pull-right"><i class="fa fa-trash"></i></a>
+                        <div class="price"><span class="qty"> {{c.numInCart}} x </span>{{c.product.price|currency: 'GHS '}}
+                        </div>
                       </figcaption>
                     </figure>
-                    <figure class="itemside mb-3">
-                      <div class="aside"><img src="assets/img/items/2.jpg" class="img-sm border"></div>
-                      <figcaption class="info align-self-center">
-                        <p class="title">Some other item name is here</p>
-                        <a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-                        <div class="price">$250</div> <!-- price-wrap.// -->
-                      </figcaption>
-                    </figure>
-                    <figure class="itemside mb-3">
-                      <div class="aside"><img src="assets/img/items/3.jpg" class="img-sm border"></div>
-                      <figcaption class="info align-self-center">
-                        <p class="title">Another name of item item</p>
-                        <a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-                        <div class="price">$250</div> <!-- price-wrap.// -->
-                      </figcaption>
-                    </figure>
-                    <div class="price-wrap text-center py-3 border-top">Subtotal: <strong
-                        class="h5 price">$1200</strong></div>
-                    <a href="#" class="btn btn-primary btn-block"> Checkout </a>
+                    <div class="price-wrap py-3 border-top">Total: <strong
+                        class="h5 price">{{cartTotal | currency: 'GHS '}}</strong></div>
+                        <a routerLink="/cart" class="btn btn-white btn-block">View Cart</a>
+                    <a routerLink="/checkout" class="btn btn-primary btn-block"> Checkout </a>
                   </div> <!-- drowpdown-menu.// -->
                 </div>
               </a>
             </div>
           </div>
         </div>
+        <!-- CART AND USER PROFILE ON MEDIA 993 OR MORE ENDES -->
       </div>
     </div>
   </section>
-
-
   <nav class="navbar navbar-main navbar-expand-lg border-bottom">
     <div class="container">
 
@@ -139,21 +114,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sell with us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Demo pages</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="page-index.html">Main</a>
-              <a class="dropdown-item" href="page-category.html">All category</a>
-              <a class="dropdown-item" href="page-listing-large.html">Listing list</a>
-              <a class="dropdown-item" href="page-listing-grid.html">Listing grid</a>
-              <a class="dropdown-item" href="page-shopping-cart.html">Shopping cart</a>
-              <a class="dropdown-item" href="page-detail-product.html">Item detail</a>
-              <a class="dropdown-item" href="page-content.html">Info content</a>
-              <a class="dropdown-item" href="page-user-login.html">Page login</a>
-              <a class="dropdown-item" href="page-user-register.html">Page register</a>
-              <a class="dropdown-item disabled text-muted" href="#">More components</a>
-            </div>
           </li>
         </ul>
         <ul class="navbar-nav ml-md-auto">

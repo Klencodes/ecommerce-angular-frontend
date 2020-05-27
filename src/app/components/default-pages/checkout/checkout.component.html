@@ -1,117 +1,322 @@
 <div class="container">
-    <app-header></app-header>
-<hr class="divider">
-<div class="row">
-	<aside class="col-md-9">
-		<output>
-		<div class="card">
-			<article class="card-body">
-				<header class="mb-4">
-					<h4 class="card-title">Checkout Detail</h4>
-				</header>
-					<div class="row">
-						<div class="col-md-6">
-							<figure class="itemside  mb-3">
-								<div class="aside"><img src="assets/img/items/1.jpg" class="border img-xs"></div>
-								<figcaption class="info">
-									<p>Name of the product goes here or title </p>
-									<span>2x $290 = Total: $430 </span>
-								</figcaption>
-							</figure>
-						</div> <!-- col.// -->
-						<div class="col-md-6">
-							<figure class="itemside  mb-3">
-								<div class="aside"><img src="assets/img/items/2.jpg" class="border img-xs"></div>
-								<figcaption class="info">
-									<p>Name of the product goes here or title </p>
-									<span>2x $290 = Total: $430 </span>
-								</figcaption>
-							</figure>
-						</div> <!-- col.// -->
-						<div class="col-md-6">
-							<figure class="itemside mb-3">
-								<div class="aside"><img src="assets/img/items/3.jpg" class="border img-xs"></div>
-								<figcaption class="info">
-									<p>Name of the product goes here or title </p>
-									<span>1x $290 = Total: $290 </span>
-								</figcaption>
-							</figure>
-						</div> <!-- col.// -->
-						<div class="col-md-6">
-							<figure class="itemside  mb-3">
-								<div class="aside"><img src="assets/img/items/4.jpg" class="border img-xs"></div>
-								<figcaption class="info">
-									<p>Name of the product goes here or title </p>
-									<span>4x $290 = Total: $430 </span>
-								</figcaption>
-							</figure>
-						</div> <!-- col.// -->
-					</div> <!-- row.// -->
-			</article> <!-- card-body.// -->
-			<article class="card-body border-top">
-
-				<dl class="row">
-				  <dt class="col-sm-10">Subtotal: <span class="float-right text-muted">2 items</span></dt>
-				  <dd class="col-sm-2 text-right"><strong>$1,568</strong></dd>
-
-				  <dt class="col-sm-10">Discount: <span class="float-right text-muted">10% offer</span></dt>
-				  <dd class="col-sm-2 text-danger text-right"><strong>$29</strong></dd>
-
-				  <dt class="col-sm-10">Delivery charge: <span class="float-right text-muted">Express delivery</span></dt>
-				  <dd class="col-sm-2 text-right"><strong>$120</strong></dd>
-
-				  <dt class="col-sm-10">Tax: <span class="float-right text-muted">5%</span></dt>
-				  <dd class="col-sm-2 text-right text-success"><strong>$7</strong></dd>
-
-				  <dt class="col-sm-10">Total:</dt>
-				  <dd class="col-sm-2 text-right"><strong class="h5 text-dark">$1,650</strong></dd>
-				</dl>
-			</article> <!-- card-body.// -->
-		</div>	
-		</output>
-	</aside>
-	<aside class="col-md-3">
-		<output>
+	<app-header></app-header>
+	<hr class="divider">
+	<div class="row">
+		<aside class="col-md-9">
+			<div class="page-content">
+				<div class="wizard-v3-content">
+					<div class="wizard-form">
+						<div class="wizard-header">
+							<h4 class="heading">Provide valid information</h4>
+							<p></p>
+						</div>
+						<form class="form-register">
+							<div id="form-total">
+								<!-- SECTION 1 -->
+								<h2>
+									<span class="step-icon"><i class="fa fa-lock"></i></span>
+									<span class="step-text">Account</span>
+								</h2>
+								<section>
+									<div class="inner">
+										<h3 style="margin-left: -6px;">Account Information:</h3>
+										<div class="row">
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-row form-row-date ">
+														<div class="form-holder form-holder-2">
+															<input type="text" placeholder="Email *"
+																class="form-control" id="email" name="email" required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input class="form-control"
+																placeholder="Phone Number (Optional)" id="phone"
+																name="phone" required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div id="radio">
+														<label class="pr-4">Gender </label>
+														<input type="radio" name="gender" value="male" class="radio-1">
+														Male
+														<input type="radio" name="gender" value="female"> Female
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="password" placeholder="Password *"
+																class="form-control" id="password" name="password"
+																required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="password" class="form-control"
+																placeholder="Re-Type Password *" id="comfirm_password"
+																name="comfirm_password" required>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<!-- SECTION 2 -->
+								<h2>
+									<span class="step-icon"><i class="fa fa-user"></i></span>
+									<span class="step-text">Personal</span>
+								</h2>
+								<section>
+									<div class="inner">
+										<h3 style="margin-left: -6px;">Address Information:</h3>
+										<div class="row">
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" class="form-control"
+																placeholder="Country *" id="country" name="country"
+																required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" placeholder="State|Region *"
+																class="form-control" id="state" name="state" required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" placeholder="City *" class="form-control"
+																id="city" name="city" required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" class="form-control"
+																placeholder="Address *" id="address" name="address"
+																required>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<!-- SECTION 3 -->
+								<h2>
+									<span class="step-icon"><i class="fa fa-credit-card"></i></span>
+									<span class="step-text">Payment</span>
+								</h2>
+								<section>
+									<div class="inner">
+										<h3 style="margin-left: -6px;">Payment Information:</h3>
+										<div class="row">
+											<div class="form-row">
+												<div class="col-md-12">
+													<div class="row">
+														<div class="col-md-4">
+															<div class="form-row form-row-date">
+																<div class="form-holder form-holder-2">
+																	<div class="form-holder form-holder-2">
+																		<input style="border: none;" type="radio" name="radio1" id="Credit-Card"
+																			value="CREDIT-CARD">
+																		<label class="pay-1-label" for="pay-1"><img
+																				src="assets/img/icons/credit_card.png"
+																				alt="pay-1">Credit
+																			Card</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4">
+															<div class="form-row form-row-date">
+																<div class="form-holder form-holder-2">
+																	<input style="border: none;"  type="radio" name="radio1" id="PayPal"
+																		value="PAYPAL">
+																	<label class="pay-2-label" for="pay-2"><img class="paypal_icon"
+																			src="assets/img/icons/paypal.png"
+																			alt="pay-2">Paypal</label>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4">
+															<div class="form-row form-row-date">
+																<div class="form-holder form-holder-2">
+																	<input style="border: none;" type="radio" name="radio1" id="MoMo"
+																		value="MOMO">
+																	<label class="pay-3-label" for="pay-3"><img class="momo-icons"
+																			src="assets/img/icons/momoGh.png"
+																			alt="pay-3">Mobile Money</label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" class="form-control"
+																placeholder="Holder Name" id="holder" name="holder"
+																required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-row form-row-date">
+														<div class="form-holder form-holder-2">
+															<input type="text" class="form-control"
+																placeholder="Card Number *" id="card" name="card"
+																required>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-row form-row-date">
+																<div class="form-holder form-holder-2">
+																	<input type="text" class="form-control"
+																		placeholder="CVC *" class="form-control"
+																		id="cvc" name="cvc" required>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-row form-row-date">
+																<div class="form-holder form-holder-2">
+																	<input type="date" class="form-control"
+																		placeholder="Expire Date *" id="date"
+																		name="expire_date" required>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<!-- SECTION 4 -->
+								<h2>
+									<span class="step-icon"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+									<span class="step-text">Confirm</span>
+								</h2>
+								<section>
+									<div class="inner">
+										<h3 style="margin-left: -6px;">Confirm Details:</h3>
+										<div class="form-row table-responsive">
+											<table class="table">
+												<tbody>
+													<tr class="space-row">
+														<th>Full Name:</th>
+														<td id="fullname-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Email Address:</th>
+														<td id="email-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Phone Number:</th>
+														<td id="phone-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>User:</th>
+														<td id="username-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Gender:</th>
+														<td id="gender-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Address:</th>
+														<td id="address-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Card Type:</th>
+														<td id="pay-val"></td>
+													</tr>
+													<tr class="space-row">
+														<th>CARD:</th>
+														<td id="MOMO"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Cards:</th>
+														<td id="MoMo"></td>
+													</tr>
+													<tr class="space-row">
+														<th>Card Type:</th>
+														<td id="cvc"></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</section>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<!-- CHECKOUT SUMMARY -->
+		<aside class="col-md-3">
 			<div class="card">
-		<div class="card-body">
-			<p>Dropdown sample</p>
-			<div class="dropdown">
-			  <a href="#" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			  Show cart
-			  </a>
-			  <div class="dropdown-menu p-3 dropdown-menu-right" style="min-width: 280px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(185px, 38px, 0px);" x-placement="bottom-end">
-				   <figure class="itemside mb-3">
-					<div class="aside"><img src="assets/img/items/1.jpg" class="img-sm border"></div>
-					<figcaption class="info align-self-center">
-						<p class="title">Name of item nice iteme</p>
-						<a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-						<div class="price">$250</div> <!-- price-wrap.// -->
-					</figcaption>
-				</figure>
-				<figure class="itemside mb-3">
-					<div class="aside"><img src="assets/img/items/2.jpg" class="img-sm border"></div>
-					<figcaption class="info align-self-center">
-						<p class="title">Some other item name is here</p>
-						<a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-						<div class="price">$250</div> <!-- price-wrap.// -->
-					</figcaption>
-				</figure>
-				<figure class="itemside mb-3">
-					<div class="aside"><img src="assets/img/items/3.jpg" class="img-sm border"></div>
-					<figcaption class="info align-self-center">
-						<p class="title">Another name of item  item</p>
-						<a href="#" class="float-right"><i class="fa fa-trash"></i></a>
-						<div class="price">$250</div> <!-- price-wrap.// -->
-					</figcaption>
-				</figure>
-				<div class="price-wrap text-center py-3 border-top">Subtotal: <strong class="h5 price">$1200</strong></div>
-				<a href="#" class="btn btn-primary btn-block"> Checkout </a>
-			  </div> <!-- drowpdown-menu.// -->
-			</div>  <!-- dropdown.// -->
+				<div class="card-body">
+					<a>EDIT CART <span class="pull-right"><i class="fa fa-user"></i> put pencel</span></a>
+					<hr class="divider">
+					<div *ngFor="let c of cartData.data; let i=index">
+						<div class="col-md-12">
+							<figure class="itemside">
+								<div class="aside"><img [src]="c.product.image" alt="{{c.product.name}}"
+										class="border img-xs"></div>
+								<figcaption class="info">
+									<p class="p-t ">{{c.product.name}} </p>
+									<span class="p-t-b">{{c.numInCart}} x <span></span>
+										{{c.product.price | currency:'GHS '}}</span>
+									<div class="p-t-b">
+										{{cartService.CalculateSubTotal(i) | currency:'GHS '}}
+									</div>
+								</figcaption>
+							</figure>
+							<hr>
+						</div>
+					</div>
 
-		</div> <!-- card-body.// -->
-		</div> <!-- card.// -->
-		</output>
-	</aside>
-</div>
+					<div class="mb-3">
+						<dl class="dlist-align">
+							<dt>Total price:</dt>
+							<dd class="text-right">{{cartTotal | currency: 'GHS '}}</dd>
+						</dl>
+						<dl class="dlist-align">
+							<dt>Shipping fee:</dt>
+							<dd class="text-right t-t"><strong>N/A</strong></dd>
+						</dl>
+						<dl class="dlist-align">
+							<dt>Total:</dt>
+							<dd class="text-right t-t "><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
+						</dl>
+						<hr>
+						<p class="text-center mb-3">
+							<img src="assets/img/misc/payments.png" height="26">
+						</p>
+					</div>
+				</div> <!-- card-body.// -->
+			</div> <!-- card .// -->
+		</aside>
+	</div>
 </div>

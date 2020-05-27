@@ -1,7 +1,21 @@
-<!-- ========================= SECTION CONTENT ========================= -->
+<app-header></app-header>
+<div class="container">
+    <!-- When the cart is empty -->
+    <div class="text-center my-5" *ngIf="cartData.data[0].numInCart === 0">
+      <h4>Your cart is empty</h4>
+  
+      <div class="my-2">
+        <img src="assets/img/icons/404.png" class="empty-box" alt="">
+      </div>
+      <button class="btn btn-success mt-3 to-uppercase-bold" routerLink="/">
+        Go to shop
+      </button>
+    </div>
+</div>
 <section class="section-content padding-y">
     <div class="container">
-    
+        <ng-container *ngIf="cartData.data[0].numInCart !== 0">
+
     <div class="row">
         <main class="col-md-9">
     <div class="card">
@@ -12,105 +26,47 @@
               <th scope="col">Product</th>
               <th scope="col" width="120">Quantity</th>
               <th scope="col" width="120">Price</th>
-              <th scope="col" class="text-right" width="200"> </th>
+              <th scope="col" class="text-right" width="200"> Action </th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr *ngFor="let c of cartData.data; let i=index">
                 <td>
                     <figure class="itemside">
-                        <div class="aside"><img src="assets/img/items/1.jpg" class="img-sm"></div>
+                        <div class="aside">
+                            <img [src]="c.product.image" alt="{{c.product.name}}" height="60" class="order-1" class="img-sm"></div>
                         <figcaption class="info">
-                            <a href="#" class="title text-dark">Some name of item goes here nice</a>
+                            <div  class="title text-dark">{{c.product.name}}</div>
                             <!-- <p class="text-muted small">Size: XL, Color: blue, <br> Brand: Gucci</p> -->
                         </figcaption>
                     </figure>
                 </td>
                 <td> 
-                    <div class="form-row">
-                        <div class="form-group col-md flex-grow-0">
-                            <div class="input-group mb-3 input-spinner">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-light" type="button" id="button-minus"> - </button>
-                              </div>
-                              <input type="text" class="form-control" value="1">
-                              <div class="input-group-append">
-                                <button class="btn btn-light" type="button" id="button-plus"> + </button>
-                              </div>
+                     <form action="">
+                        <div class="form-row">
+                            <div class="form-group col-md flex-grow-0">
+                                <div class="input-group mb-3 input-spinner">
+                                  <div class="input-group-prepend">
+                                    <button class="btn btn-light" type="button" id="decrease" (click)="ChangeQuantity(i, false)"> - </button>
+                                  </div>
+                                  <input type="number" style="background-color: white;" class="form-control" id="number" [value]="c.numInCart" readonly [max]="c.product.quantity">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-light" type="button" id="increase" (click)="ChangeQuantity(i, true)"> + </button>
+                                  </div>
+                                </div>
                             </div>
                         </div>
+                     </form>
+                  
+                </td>
+                <td> 
+                    <div class="price-wrap"> 
+                        <var class="price">{{cartService.CalculateSubTotal(i) | currency:'GHS '}}</var> 
+                        <small class="text-muted"> {{c.product.price | currency:'GHS '}} </small> 
                     </div>
                 </td>
-                <td> 
-                    <div class="price-wrap"> 
-                        <var class="price">$1156.00</var> 
-                        <small class="text-muted"> $315.20 each </small> 
-                    </div> <!-- price-wrap .// -->
-                </td>
                 <td class="text-center"> 
-                    <a data-original-title="Save to Wishlist" title="" href="#" class="btn btn-light btn-round" data-toggle="tooltip"> <i class="fa fa-trash"> Remove</i></a> 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <figure class="itemside">
-                        <div class="aside"><img src="assets/img/items/2.jpg" class="img-sm"></div>
-                        <figcaption class="info">
-                            <a href="#" class="title text-dark">Product name  goes here nice</a>
-                            <p class="text-muted small">Size: XL, Color: blue, <br> Brand: Gucci</p>
-                        </figcaption>
-                    </figure>
-                </td>
-                <td> 
-                    <div class="form-row">
-                        <div class="form-group col-md flex-grow-0">
-                            <div class="input-group mb-3 input-spinner">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-light" type="button" id="button-minus"> - </button>
-                              </div>
-                              <input type="text" class="form-control" value="1">
-                              <div class="input-group-append">
-                                <button class="btn btn-light" type="button" id="button-plus"> + </button>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td> 
-                    <div class="price-wrap"> 
-                        <var class="price">$149.97</var> 
-                        <small  class="text-muted"> $75.00 each </small>  
-                    </div> 
-                </td>
-                <td class="text-center"> 
-                    <a data-original-title="Save to Wishlist" title="" href="#" class="btn btn-light btn-round" data-toggle="tooltip"> <i class="fa fa-trash"> Remove</i></a> 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <figure class="itemside">
-                        <div class="aside"><img src="assets/img/items/3.jpg" class="img-sm"></div>
-                        <figcaption class="info">
-                            <a href="#" class="title text-dark">Another name of some product goes just here as a demo text </a>
-                            <p class="small text-muted">Size: XL, Color: blue,  Brand: Tissot</p>
-                        </figcaption>
-                    </figure>
-                </td>
-                <td> 
-                    <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>	
-                        <option>3</option>	
-                    </select> 
-                </td>
-                <td> 
-                    <div class="price-wrap"> 
-                        <var class="price">$98.00</var> 
-                        <small class="text-muted"> $578.00 each</small> 
-                    </div> <!-- price-wrap .// -->
-                </td>
-                <td class="text-center"> 
-                    <a data-original-title="Save to Wishlist" title="" href="#" class="btn btn-light btn-round" data-toggle="tooltip"> <i class="fa fa-trash"> Remove</i></a> 
+                    <a data-original-title="Delete item" title="Delete item" class="btn btn-light btn-round" data-toggle="tooltip" (click)="cartService.DeleteProductFromCart(i)"> <i class="fa fa-trash"> Remove</i></a> 
                 </td>
             </tr>
             </tbody>
@@ -128,7 +84,8 @@
         <p class="icontext"><i class="icon text-success fa fa-truck"></i> Free Delivery within 1-2 weeks</p>
     </div>
     
-        </main> <!-- col.// -->
+        </main> 
+        
         <aside class="col-md-3">
             <div class="card mb-3">
                 <div class="card-body">
@@ -143,21 +100,21 @@
                         </div>
                     </div>
                 </form>
-                </div> <!-- card-body.// -->
-            </div>  <!-- card .// -->
+                </div> 
+            </div> 
             <div class="card">
                 <div class="card-body">
                         <dl class="dlist-align">
                           <dt>Total price:</dt>
-                          <dd class="text-right">USD 568</dd>
+                          <dd class="text-right p-t-b">{{cartTotal | currency: 'GHS '}}</dd>
                         </dl>
                         <dl class="dlist-align">
                           <dt>Discount:</dt>
-                          <dd class="text-right">USD 658</dd>
+                          <dd class="text-right">{{0 | currency: 'GHS '}}</dd>
                         </dl>
                         <dl class="dlist-align">
                           <dt>Total:</dt>
-                          <dd class="text-right  h5"><strong>$1,650</strong></dd>
+                          <dd class="text-right"><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
@@ -168,7 +125,7 @@
             </div>  <!-- card .// -->
         </aside> <!-- col.// -->
     </div>
-    
+    </ng-container>
     </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
@@ -191,3 +148,4 @@
         
         </div><!-- container // -->
         </section>
+<app-footer></app-footer>

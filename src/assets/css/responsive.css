@@ -13,6 +13,38 @@
   .nav-home-aside {
     width: 200px; } }
 @media (max-width: 992px) {
+  .widget-pull-right {
+    position: relative;
+    top: 76px;
+    z-index: 1;
+}
+.search-header-my {
+  margin-top: 24px !important;
+  margin-bottom: -60px !important;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0 solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent;
+}
+  .widget-pull-right { 
+    position: relative;
+    top: 101px;
+    z-index: 1;
+  }
+  .widget-header .widget-view {
+    padding: 5px 7px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    top: -21px !important;
+  }
+
   /* small tablet devices */
   .table-shopping-cart tr td:first-child {
     width: 250px; }
@@ -31,6 +63,48 @@
     .slider-home-banner .carousel-item img {
       max-height: 350px; 
     } 
+    .form-register .steps ul {
+	    padding-left: 0;
+	    justify-content: space-around;
+	    -o-justify-content: space-around;
+		-ms-justify-content: space-around;
+		-moz-justify-content: space-around;
+		-webkit-justify-content: space-around;
+	}
+	.form-register .steps li a .title {
+		text-align: center;
+	}
+	.form-register .steps li a .title .step-icon,
+	.form-register .steps li a .title .step-icon {
+		margin: 0 auto;
+	}
+	.form-register .steps li a .title .step-icon::before,
+	.form-register .steps li:last-child a .title .step-icon::after {
+		content: none;
+	}
+	.actions ul li:first-child {
+		margin-left: 0;
+  }
+  .form-register .steps .current .step-icon::before,
+.form-register .steps .current:last-child .step-icon::after,
+.form-register .steps .done .step-icon::before {
+    background: white;
+    border: 2px solid #ff6a00 !important;
+}
+.form-register .steps li .step-icon::before, .form-register .steps li:last-child .step-icon::after {
+  position: absolute;
+  content: "";
+  background: #e5e5e5;
+  width: 50px !important;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
 }
 
 
@@ -118,7 +192,106 @@
     width: auto;
     display: inline-block;
     cursor: zoom-in;
+  }
+  .table-shopping-cart.table td, .table-shopping-cart.table th {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .widget-header .icon-area {
+    font-size: 15px !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+  
+  .widget-header .icon-area .notify {
+    position: absolute;
+    top: -10px !important;
+    right: -34% !important;
+  }
+  .inner .form-row.form-row-date .form-holder select {
+    width: 17.5%;
+    margin-right: 20px;
+  }
+.inner .form-row .form-holder label.pay-1-label, 
+.inner .form-row .form-holder label.pay-2-label {
+  margin-bottom: 15px;
+ }
+ .payment-margin {
+  margin: -13px !important;
 }
+}
+
+@media screen and (max-width: 575px) {
+	.wizard-v3-content {
+		width: 100%;
+	}
+	.wizard-form .wizard-header {
+		padding:  40px 20px 20px 20px;
+  }
+  .form-register .content {
+    padding: 35px 20px 35px !important;
+}
+	.inner .form-row {
+		/* flex-direction: column; */
+		-o-flex-direction: column;
+		-ms-flex-direction: column;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		margin: 0;
+	}
+	.inner .form-row .form-holder {
+		width: 100%;
+	}
+	.inner .form-row .form-holder.form-holder-1 {
+	    width: 100%;
+	}
+	.inner .form-row .form-holder {
+		padding: 0;
+	}
+	.inner .form-row .form-holder label.special-label {
+	    float: none;
+	}
+	.inner .form-row.form-row-date .form-holder select {
+	    float: none;
+	    width: 100%;
+	    margin-bottom: 20px;
+	    margin-right: 0;
+	    display: block;
+	}
+	.form-register .steps li a .title .step-icon {
+		width: 40px;
+		height: 40px;
+		font-size: 20px;
+	}
+	.form-register .steps li a .step-text {
+		font-size: 12px;
+	}
+	.form-register .content {
+		padding: 35px 30px 60px;
+	}
+	.inner .form-row #radio {
+		margin-left: -2px;
+	}
+	.inner .form-row #checkbox {
+		margin-left: 0;
+	}
+	.actions ul li {
+		width: 120px;
+	}
+	.actions ul li a {
+	    padding: 15px 24px;
+	}
+}
+
+@media all and (max-width: 480px) {
+  .card-sm .img-wrap {
+    height: 160px !important;
+  }
+  .empty-box {
+    height: 290px;
+    max-width: 300px !important;
+    padding: 1rem 0px 0px;
+  }
 }
 
 @media all and (max-width: 360px) {
@@ -126,4 +299,8 @@
   .card-sm .img-wrap {
     height: 100px !important;
   }
+  .search-header select {
+    flex-basis: 62px !important;
+    flex-grow: 0 !important;
+}
 }
