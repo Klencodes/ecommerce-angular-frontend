@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ProductModelServer, serverResponse} from "../models/product.model";
+import {ProductModelServer, ServerResponse} from "src/app/models/product.model";
 import {environment} from "../../environments/environment";
 
 
@@ -16,17 +16,17 @@ export class ProductService {
   }
 
 /* GET ALL PRODUCTS FROM SERVER */
-  getAllProducts(limitOfResults=10): Observable<serverResponse> {
-    return this.httpClient.get<serverResponse>(this.ServerURL + 'products', {
+  getAllProducts(limitOfResults=10): Observable<ServerResponse> {
+    return this.httpClient.get<ServerResponse>(this.ServerURL + 'products', {
       params: {
         limit: limitOfResults.toString()
       }
     });
-  }
+  } 
 
   /* GET SINGLE PRODUCT FROM SERVER */
   getSingleProduct(id: Number): Observable<ProductModelServer> {
-    return this.httpClient.get<ProductModelServer>(this.ServerURL + 'products/' +id);
+    return this.httpClient.get<ProductModelServer>(this.ServerURL + 'products/' + id);
   }
 
   /* GET PRODUCT FROM CATEGORY FROM SERVER */

@@ -4,10 +4,9 @@
 html {
   font-family: 'Inter', sans-serif;
   font-size: 15px; }
-
-/* ========================
-INCLUDE STYLES AND COMPONENTS
-===================== */
+.btn {
+  cursor: pointer !important;
+}
 /* ================== HELPERS  =================== */
 a:hover {
   text-decoration: none; }
@@ -458,7 +457,9 @@ p:last-child {
     padding: 5px 7px;
     display: inline-block;
     position: relative;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer;
+   }
   .widget-header .icon-area {
     font-size: 24px;
     display: inline-block;
@@ -759,6 +760,7 @@ a[class*='card'] {
 [class*='card-product'] p {
   margin-bottom: 0; }
 [class*='card-product'] .img-wrap {
+  cursor: pointer;
   overflow: hidden;
   position: relative; }
   [class*='card-product'] .img-wrap img {

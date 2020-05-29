@@ -4,17 +4,13 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#">Home</a></li>
       <li class="breadcrumb-item"><a href="#">Category name</a></li>
-      <li class="breadcrumb-item"><a href="#">Sub category</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Items</li>
+      <li class="breadcrumb-item"><a href="#">{{product.category}}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{product.name}}</li>
     </ol>
   </div>
 </section>
-
-<!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg-white padding-y">
   <div class="container">
-
-    <!-- ============================ ITEM DETAIL ======================== -->
     <div class="row">
       <aside class="col-md-6">
         <div class="card">
@@ -35,7 +31,7 @@
       <main class="col-md-6">
         <article class="product-info-aside">
 
-          <h2 class="title mt-3">Hot sale unisex New Design Shoe </h2>
+          <h2 class="title mt-3">{{product.name}} </h2>
 
           <div class="rating-wrap my-3">
             <ul class="rating-stars">
@@ -52,19 +48,14 @@
             </ul>
             <!-- <small class="label-rating text-muted">132 reviews</small> -->
             <!-- <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small> -->
-          </div> <!-- rating-wrap.// -->
+          </div>
 
           <div class="mb-3">
-            <var class="price h4">USD 465,00</var>
-            <span class="text-muted">USD 562.65 incl. VAT</span>
-          </div> <!-- price-detail-wrap .// -->
+            <var class="price h4">{{product.price | currency: 'GHS '}}</var>
+            <!-- <span class="text-muted">USD 562.65 incl. VAT</span> -->
+          </div>
 
-          <p>Compact sport shoe for running, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat </p>
+          <p>{{product.description}} </p>
 
 
           <dl class="row">
@@ -72,25 +63,32 @@
             <dd class="col-sm-9"><a href="#">Great textile Ltd.</a></dd>
 
             <dt class="col-sm-3">Availabilty</dt>
-            <dd class="col-sm-9">in Stock</dd>
+            <dd class="col-sm-9">
+              {{product.quantity < 1 ? "NO STOCK" : "IN STOCK" }}
+            </dd>
           </dl>
 
           <div class="form-row  mt-4">
             <div class="form-group col-md flex-grow-0">
               <div class="input-group mb-3 input-spinner">
                 <div class="input-group-prepend">
-                  <button class="btn btn-light" type="button" id="button-plus"> + </button>
+                  <button class="btn btn-light qty-down" (click)="Decrease()">  &minus; </button>
                 </div>
-                <input type="text" class="form-control" value="1">
+                <input class="form-control"  [max]="product?.quantity >=1 ? product?.quantity : 0"
+                min="1"
+                readonly
+                #quantity
+                value="{{product?.quantity >= 1 ? 1: 0}}"
+         >
                 <div class="input-group-append">
-                  <button class="btn btn-light" type="button" id="button-minus"> &minus; </button>
+                  <button class="btn btn-light qty-up" (click)="Increase()" >+ </button>
                 </div>
               </div>
             </div> <!-- col.// -->
             <div class="form-group col-md">
-              <a href="#" class="btn  btn-primary">
-                <i class="fas fa-shopping-cart"></i> <span class="text">Add to cart</span>
-              </a>
+              <button class="btn btn-primary" [class.disabled]="product.quantity < 1"  (click)="addToCart(product?.id)">
+                <i class="fas fa-shopping-cart"></i> <span class="text">{{product.quantity < 1 ? "NO STOCK" : "Add to cart" }}</span>
+              </button> -->
               <a href="#" class="btn btn-light">
                 <i class="fas fa-envelope"></i> <span class="text">Contact supplier</span>
               </a>

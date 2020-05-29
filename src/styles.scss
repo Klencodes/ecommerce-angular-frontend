@@ -1,4 +1,378 @@
-/* You can add global styles to this file, and also import other style files */
+
+//LOGIN AND SIGIUP
+  .login-html .sign-in-htm,
+  .login-html .for-pwd-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    -webkit-transform:rotateY(180deg);
+    transform:rotateY(180deg);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-transition:all 0s linear;
+    transition:all 0s linear;
+  }
+  .login-html .sign-in,
+  .login-html .for-pwd,
+  .login-form .group .check{
+    display:none;
+  }
+  .login-html .tab{
+    margin-right:15px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+  }
+  .login-html .sign-in:checked + .tab,
+  .login-html .for-pwd:checked + .tab{
+    color:#ff6a00;
+    border-color:#ff6a00;
+  }
+  .login-form{
+    min-height:345px;
+    position:relative;
+    -webkit-perspective:1000px;
+    perspective:1000px;
+    -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+  }
+  .login-form .group{
+    margin-bottom:15px;
+  }
+  .login-form .group .label,
+  .login-form .group .input,
+  .login-form .group .button{
+    width:100%;
+    display:block;
+  }
+//   .login-form .group .button{
+//     border:none;
+//     padding:10px 20px;
+//   }
+//   .login-form .group .button{
+//     background:#ff6a00;
+//     color: #FFF;
+//   }
+  .login-form .group label .icon{
+    width:15px;
+    height:15px;
+    border-radius:2px;
+    position:relative;
+    display:inline-block;
+  }
+  .login-form .group label .icon:before,
+  .login-form .group label .icon:after{
+    content:'';
+    width:10px;
+    height:2px;
+    background:#fff;
+    position:absolute;
+  }
+  .login-form .group label .icon:before{
+    left:3px;
+    width:5px;
+    bottom:6px;
+  }
+  .login-form .group label .icon:after{
+    top:6px;
+    right:0;
+  }
+  .login-form .group .check:checked + label{
+    color:#fff;
+  }
+
+  .login-html .sign-in:checked + .tab + .for-pwd + .tab + .login-form .sign-in-htm{
+    transform:rotate(0);
+  }
+  .login-html .for-pwd:checked + .tab + .login-form .for-pwd-htm{
+    transform:rotate(0);
+  }
+
+
+
+
+
+
+.wrapper {
+    width: 650px;
+    height: 650px;
+    background: #f7f7f7;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  
+  .wrapper .radio_tabs {
+    height: 60px;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 18px;
+    display: flex;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .radio_tabs label {
+    margin-right: 15px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 28px;
+  }
+  
+  .wrapper .radio_tabs .radio_mark:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    background: url("https://i.imgur.com/3OGSx5M.png.png") no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .wrapper .radio_tabs label .input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+  }
+  
+  .wrapper .radio_tabs label .input:checked ~ .radio_mark {
+    color: #ff5d66;
+  }
+  
+  .wrapper .radio_tabs label .input:checked ~ .radio_mark:before {
+    background-position: 0 -23px;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .wrapper .content {
+    width: 100%;
+    height: calc(100% - 70px);
+    background: #fff;
+    border-radius: 5px;
+    padding: 18px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .content p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 15px;
+  }
+  
+/*============================================================
+	CODE FOR COL-XXS, COL-XXS-OFFSET, COL-XXS-PUSH, COL-XXS-PULL
+==============================================================*/
+.col-xxs-1, .col-xxs-2, .col-xxs-3, .col-xxs-4,
+.col-xxs-5, .col-xxs-6, .col-xxs-7, .col-xxs-8,
+.col-xxs-9, .col-xxs-10, .col-xxs-11, .col-xxs-12 {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+@media (max-width: 575px) {
+  .col-xxs-1,
+  .col-xxs-2,
+  .col-xxs-3,
+  .col-xxs-4,
+  .col-xxs-5,
+  .col-xxs-6,
+  .col-xxs-7,
+  .col-xxs-8,
+  .col-xxs-9,
+  .col-xxs-10,
+  .col-xxs-11 {
+    float: left;
+  }
+
+  .col-xxs-1 {
+    width: 8.333333333333332% !important;
+  }
+
+  .col-xxs-2 {
+    width: 16.666666666666664% !important;
+  }
+
+  .col-xxs-3 {
+    width: 25%;
+  }
+
+  .col-xxs-4 {
+    width: 33.33333333333333%!important;
+  }
+
+  .col-xxs-5 {
+    width: 41.66666666666667% !important;
+  }
+
+  .col-xxs-6 {
+    width: 50% !important;
+  }
+
+  .col-xxs-7 {
+    width: 58.333333333333336% !important;
+  }
+
+  .col-xxs-8 {
+    width: 66.66666666666666% !important;
+  }
+
+  .col-xxs-9 {
+    width: 75%;
+  }
+
+  .col-xxs-10 {
+    width: 83.33333333333334% !important;
+  }
+
+  .col-xxs-11 {
+    width: 91.66666666666666% !important;
+  }
+
+  .col-xxs-12 {
+    width: 100% !important;
+  }
+
+  .col-xxs-push-1 {
+    left: 8.333333333333332% !important;
+  }
+
+  .col-xxs-push-2 {
+    left: 16.666666666666664% !important;
+  }
+
+  .col-xxs-push-3 {
+    left: 25%;
+  }
+
+  .col-xss-push-4 {
+    left: 33.33333333333333% !important;
+  }
+
+  .col-xxs-push-5 {
+    left: 41.66666666666667% !important;
+  }
+
+  .col-xxs-push-6 {
+    left: 50% !important;
+  }
+
+  .col-xxs-push-7 {
+    left: 58.333333333333336% !important;
+  }
+
+  .col-xxs-push-8 {
+    left: 66.66666666666666% !important;
+  }
+
+  .col-xxs-push-9 {
+    left: 75% !important;
+  }
+
+  .col-xxs-push-10 {
+    left: 83.33333333333334% !important;
+  }
+
+  .col-xxs-push-11 {
+    left: 91.66666666666666% !important;
+  }
+
+  .col-xxs-pull-1 {
+    right: 8.333333333333332% !important;
+  }
+
+  .col-xxs-pull-2 {
+    right: 16.666666666666664% !important;
+  }
+
+  .col-xxs-pull-3 {
+    right: 25% !important;
+  }
+
+  .col-xxs-pull-4 {
+    right: 33.33333333333333% !important;
+  }
+
+  .col-xxs-pull-5 {
+    right: 41.66666666666667% !important;
+  }
+
+  .col-xxs-pull-6 {
+    right: 50%;
+  }
+
+  .col-xxs-pull-7 {
+    right: 58.333333333333336% !important;
+  }
+
+  .col-xxs-pull-8 {
+    right: 66.66666666666666% !important;
+  }
+
+  .col-xxs-pull-9 {
+    right: 75%;
+  }
+
+  .col-xxs-pull-10 {
+    right: 83.33333333333334% !important;
+  }
+
+  .col-xxs-pull-11 {
+    right: 91.66666666666666% !important;
+  }
+
+  .col-xxs-offset-1 {
+    margin-left: 8.333333333333332% !important;
+  }
+
+  .col-xxs-offset-2 {
+    margin-left: 16.666666666666664% !important;
+  }
+
+  .col-xxs-offset-3 {
+    margin-left: 25% !important;
+  }
+
+  .col-xxs-offset-4 {
+    margin-left: 33.33333333333333% !important;
+  }
+
+  .col-xxs-offset-5 {
+    margin-left: 41.66666666666667% !important;
+  }
+
+  .col-xxs-offset-6 {
+    margin-left: 50% !important;
+  }
+
+  .col-xxs-offset-7 {
+    margin-left: 58.333333333333336% !important;
+  }
+
+  .col-xxs-offset-8 {
+    margin-left: 66.66666666666666% !important;
+  }
+
+  .col-xxs-offset-9 {
+    margin-left: 75%;
+  }
+
+  .col-xxs-offset-10 {
+    margin-left: 83.33333333333334% !important;
+  }
+
+  .col-xxs-offset-11 {
+    margin-left: 91.66666666666666% !important;
+  }
+}
 .mb-0 {
     margin-bottom: 0px !important;
 }
@@ -606,4 +980,39 @@
 .paypal_icon {
     padding-top: 14px;
     padding-bottom: 5px;
+}
+.gender-p {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+h2 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+h2.background {
+  position: relative;
+  z-index: 1;
+  
+  &:before {
+      content:"";
+      margin: 0 auto; /* this centers the line to the full width specified */
+      position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+      top: 50%; left: 0; right: 0; bottom: 0;
+      width: 95%;
+      z-index: -1;
+  }
+}
+
+h2.double:after {
+  border-bottom: 2px solid green;
+  -webkit-box-shadow: 0 1px 0 0 green;
+  -moz-box-shadow: 0 1px 0 0 green;
+  box-shadow: 0 1px 0 0 green;
+  content: "";
+  margin: 0 auto; /* this centers the line to the full width specified */
+  position: absolute;
+  top: 45%; left: 0; right: 0;
+  width: 95%;
+  z-index: -1;
 }

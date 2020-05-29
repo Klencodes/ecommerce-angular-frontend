@@ -10,9 +10,9 @@ export interface ProductModelServer {
   }
   
   
-  export interface serverResponse  {
+  export interface ServerResponse  {
     count: number;
-    const: string;s
+    const: string;
     products: ProductModelServer[]
   };
   

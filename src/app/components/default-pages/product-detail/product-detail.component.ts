@@ -10,8 +10,6 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./product-detail.component.scss']
 })
 
-
-
 export class ProductDetailComponent implements OnInit {
   
   id: number;
@@ -37,7 +35,7 @@ export class ProductDetailComponent implements OnInit {
         this.id = prodId;
         this.productService.getSingleProduct(this.id).subscribe(prod => {
           this.product = prod;
-            console.log(this.product)
+            // console.log(this.product)
 
           if (prod.images !== null) {
             this.thumbImages = prod.images.split(';');

@@ -19,21 +19,22 @@ $(function(){
             var phone = $('#phone').val();
             var username = $('#username').val();
             var gender = $('form input[type=radio]:checked').val();
+            var card = $('form input[type=radio]:checked').val();
             var address = $('#address').val();
 
             $('#fullname-val').text(fullname);
             $('#email-val').text(email);
             $('#phone-val').text(phone);
-            $('#username-val').text(username);
+            $('#card-val').text(cardType);
             $('#address-val').text(address);
             $('#gender-val').text(gender);
 
             return true;
         }
     });
-    $("#date").datepicker({
-        dateFormat: "MM - DD - yy",
-        showOn: "both",
-        buttonText : '<i class="zmdi zmdi-chevron-down"></i>',
-    });
+    // $("#date").datepicker({
+    //     dateFormat: "MM - DD - yy",
+    //     showOn: "both",
+    //     buttonText : '<i class="fa fa-arrow-down"></i>',
+    // });
 });

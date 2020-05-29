@@ -11,6 +11,8 @@ import { ResetPasswordComponent } from './components/setup/reset-password/reset-
 import { AccountComponent } from './components/account-detail/account/account.component';
 import { OrderHistoryComponent } from './components/account-detail/order-history/order-history.component';
 import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
+import { ConfirmationComponent } from './components/common/confirmation/confirmation.component';
+import { PageNotFoundComponent } from './components/common/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -18,14 +20,17 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'cat/:id', component: ShopCatComponent },
+  { path: 'category', component: ShopCatComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'confirmation', component: ConfirmationComponent },
   {path: 'account', component : AccountComponent, children: [
     {path: 'orders', component : OrderHistoryComponent},
     {path: 'transactions', component : TransactionsComponent}
   ]},
+  { path: '**', component: PageNotFoundComponent },
+
 ];
 
 @NgModule({

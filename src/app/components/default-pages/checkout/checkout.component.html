@@ -1,207 +1,238 @@
+<ngx-spinner
+  bdColor= "rgba(151,149,149,0.4)"
+  size="large"
+  color="orange"
+  type="ball-clip-rotate-pulse"
+  fullScreen="true"
+>
+  <p style="font-size: 20px; color: black">Placing Order...</p>
+</ngx-spinner>
+
 <div class="container">
 	<app-header></app-header>
 	<hr class="divider">
+	<div class="container">
+		<!-- When the cart is empty -->
+		<div class="text-center" *ngIf="cartData.data[0].numInCart === 0">
+		  <h4>No item(s) to checkout</h4>
+	  
+		  <div class="my-2">
+			<img src="assets/img/icons/404.png" class="empty-box" alt="">
+		  </div>
+		  <button class="btn btn-primary mt-3 to-uppercase-bold" routerLink="/">
+			Go to shop
+		  </button>
+		</div>
+	</div>
 	<div class="row">
-		<aside class="col-md-9">
-			<div class="page-content">
-				<div class="wizard-v3-content">
-					<div class="wizard-form">
-						<div class="wizard-header">
-							<h4 class="heading">Provide valid information</h4>
-							<p></p>
-						</div>
-						<form class="form-register">
-							<div id="form-total">
-								<!-- SECTION 1 -->
-								<h2>
-									<span class="step-icon"><i class="fa fa-lock"></i></span>
-									<span class="step-text">Account</span>
-								</h2>
-								<section>
-									<div class="inner">
-										<h3 style="margin-left: -6px;">Account Information:</h3>
-										<div class="row">
-											<div class="form-row">
-												<div class="col-md-6">
-													<div class="form-row form-row-date ">
-														<div class="form-holder form-holder-2">
-															<input type="text" placeholder="Email *"
-																class="form-control" id="email" name="email" required>
+		<ng-container *ngIf="cartData.data[0].numInCart !== 0">
+
+			<aside class="col-md-9">
+				<div class="page-content">
+					<div class="wizard-v3-content">
+						<div class="wizard-form">
+							<div class="wizard-header">
+								<h4 class="heading">Provide valid information</h4>
+								<p></p>
+							</div>
+							<form class="form-register">
+								<div id="form-total">
+									<!-- SECTION 1 -->
+									<h2>
+										<span class="step-icon"><i class="fa fa-lock"></i></span>
+										<span class="step-text">Account</span>
+									</h2>
+									<section>
+										<div class="inner">
+											<h3 style="margin-left: -6px;">Account Information:</h3>
+											<div class="row">
+												<div class="form-row">
+													<div class="col-md-12">
+														<div class="form-row form-row-date ">
+															<div class="form-holder form-holder-2">
+																<input type="text" placeholder="Email *"
+																	class="form-control" id="email" name="email" required>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input class="form-control"
-																placeholder="Phone Number (Optional)" id="phone"
-																name="phone" required>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input class="form-control"
+																	placeholder="Phone Number (Optional)" id="phone"
+																	name="phone" required>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="col-md-6">
-													<div id="radio">
-														<label class="pr-4">Gender </label>
-														<input type="radio" name="gender" value="male" class="radio-1">
-														Male
-														<input type="radio" name="gender" value="female"> Female
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="password" placeholder="Password *"
-																class="form-control" id="password" name="password"
-																required>
+													<div class="col-md-6">
+														<div class="form-group gender-p"> Gender :
+															<label class="custom-control custom-radio custom-control-inline">
+															<input class="custom-control-input" checked="" type="radio" name="gender" value="male">
+															<span class="custom-control-label"> Male </span>
+															</label>
+															<label class="custom-control custom-radio custom-control-inline">
+															<input class="custom-control-input" type="radio" name="gender" value="female">
+															<span class="custom-control-label"> Female </span>
+															</label>
 														</div>
 													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="password" class="form-control"
-																placeholder="Re-Type Password *" id="comfirm_password"
-																name="comfirm_password" required>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="password" placeholder="Password *"
+																	class="form-control" id="password" name="password"
+																	required>
+															</div>
 														</div>
 													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<!-- SECTION 2 -->
-								<h2>
-									<span class="step-icon"><i class="fa fa-user"></i></span>
-									<span class="step-text">Personal</span>
-								</h2>
-								<section>
-									<div class="inner">
-										<h3 style="margin-left: -6px;">Address Information:</h3>
-										<div class="row">
-											<div class="form-row">
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" class="form-control"
-																placeholder="Country *" id="country" name="country"
-																required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" placeholder="State|Region *"
-																class="form-control" id="state" name="state" required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" placeholder="City *" class="form-control"
-																id="city" name="city" required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" class="form-control"
-																placeholder="Address *" id="address" name="address"
-																required>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="password" class="form-control"
+																	placeholder="Re-Type Password *" id="comfirm_password"
+																	name="comfirm_password" required>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</section>
-								<!-- SECTION 3 -->
-								<h2>
-									<span class="step-icon"><i class="fa fa-credit-card"></i></span>
-									<span class="step-text">Payment</span>
-								</h2>
-								<section>
-									<div class="inner">
-										<h3 style="margin-left: -6px;">Payment Information:</h3>
-										<div class="row">
-											<div class="form-row">
-												<div class="col-md-12">
-													<div class="row">
-														<div class="col-md-4">
-															<div class="form-row form-row-date">
-																<div class="form-holder form-holder-2">
+									</section>
+									<!-- SECTION 2 -->
+									<h2>
+										<span class="step-icon"><i class="fa fa-user"></i></span>
+										<span class="step-text">Personal</span>
+									</h2>
+									<section>
+										<div class="inner">
+											<h3 style="margin-left: -6px;">Address Information:</h3>
+											<div class="row">
+												<div class="form-row">
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" class="form-control"
+																	placeholder="Country *" id="country" name="country"
+																	required>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" placeholder="State|Region *"
+																	class="form-control" id="state" name="state" required>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" placeholder="City *" class="form-control"
+																	id="city" name="city" required>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" class="form-control"
+																	placeholder="Address *" id="address" name="address"
+																	required>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<!-- SECTION 3 -->
+									<h2>
+										<span class="step-icon"><i class="fa fa-credit-card"></i></span>
+										<span class="step-text">Payment</span>
+									</h2>
+									<section>
+										<div class="inner">
+											<h3 style="margin-left: -6px;">Payment Information:</h3>
+											<div class="row">
+												<div class="form-row">
+													<div class="col-md-12">
+														
+														<div class="row">
+															<div class="col-md-4">
+																<div class="form-row form-row-date">
 																	<div class="form-holder form-holder-2">
-																		<input style="border: none;" type="radio" name="radio1" id="Credit-Card"
-																			value="CREDIT-CARD">
-																		<label class="pay-1-label" for="pay-1"><img
-																				src="assets/img/icons/credit_card.png"
-																				alt="pay-1">Credit
-																			Card</label>
+																		<div class="form-holder form-holder-2">
+																			<input style="border: none;" type="radio" name="radio1" id="Credit-Card"
+																				value="CREDIT_CARD">
+																			<label class="pay-1-label" for="pay-1"><img
+																					src="assets/img/icons/credit_card.png"
+																					alt="pay-1">Credit
+																				Card</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-4">
+																<div class="form-row form-row-date">
+																	<div class="form-holder form-holder-2">
+																		<input style="border: none;"  type="radio" name="radio1" id="PayPal"
+																			value="PAYPAL">
+																		<label class="pay-2-label" for="pay-2"><img class="paypal_icon"
+																				src="assets/img/icons/paypal.png"
+																				alt="pay-2">Paypal</label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-4">
+																<div class="form-row form-row-date">
+																	<div class="form-holder form-holder-2">
+																		<input style="border: none;" type="radio" name="radio1" id="MoMo"
+																			value="MOMO">
+																		<label class="pay-3-label" for="pay-3"><img class="momo-icons"
+																				src="assets/img/icons/momoGh.png"
+																				alt="pay-3">Mobile Money</label>
 																	</div>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-4">
-															<div class="form-row form-row-date">
-																<div class="form-holder form-holder-2">
-																	<input style="border: none;"  type="radio" name="radio1" id="PayPal"
-																		value="PAYPAL">
-																	<label class="pay-2-label" for="pay-2"><img class="paypal_icon"
-																			src="assets/img/icons/paypal.png"
-																			alt="pay-2">Paypal</label>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-4">
-															<div class="form-row form-row-date">
-																<div class="form-holder form-holder-2">
-																	<input style="border: none;" type="radio" name="radio1" id="MoMo"
-																		value="MOMO">
-																	<label class="pay-3-label" for="pay-3"><img class="momo-icons"
-																			src="assets/img/icons/momoGh.png"
-																			alt="pay-3">Mobile Money</label>
-																</div>
+													</div>
+													<div class="col-md-12">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" class="form-control"
+																	placeholder="Holder Name" id="holder" name="holder"
+																	required>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div class="col-md-12">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" class="form-control"
-																placeholder="Holder Name" id="holder" name="holder"
-																required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-row form-row-date">
-														<div class="form-holder form-holder-2">
-															<input type="text" class="form-control"
-																placeholder="Card Number *" id="card" name="card"
-																required>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="row">
-														<div class="col-md-6">
-															<div class="form-row form-row-date">
-																<div class="form-holder form-holder-2">
-																	<input type="text" class="form-control"
-																		placeholder="CVC *" class="form-control"
-																		id="cvc" name="cvc" required>
-																</div>
+													<div class="col-md-6">
+														<div class="form-row form-row-date">
+															<div class="form-holder form-holder-2">
+																<input type="text" class="form-control"
+																	placeholder="Card Number *" id="card" name="card"
+																	required>
 															</div>
 														</div>
-														<div class="col-md-6">
-															<div class="form-row form-row-date">
-																<div class="form-holder form-holder-2">
-																	<input type="date" class="form-control"
-																		placeholder="Expire Date *" id="date"
-																		name="expire_date" required>
+													</div>
+													<div class="col-md-6">
+														<div class="row">
+															<div class="col-md-6">
+																<div class="form-row form-row-date">
+																	<div class="form-holder form-holder-2">
+																		<input type="text" class="form-control"
+																			placeholder="CVC *" class="form-control"
+																			id="cvc" name="cvc" required>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-row form-row-date">
+																	<div class="form-holder form-holder-2">
+																		<input type="text" class="form-control"
+																			placeholder="Expire Date *" id="date"
+																			name="expire_date" required>
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -209,114 +240,117 @@
 												</div>
 											</div>
 										</div>
-									</div>
-								</section>
-								<!-- SECTION 4 -->
-								<h2>
-									<span class="step-icon"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
-									<span class="step-text">Confirm</span>
-								</h2>
-								<section>
-									<div class="inner">
-										<h3 style="margin-left: -6px;">Confirm Details:</h3>
-										<div class="form-row table-responsive">
-											<table class="table">
-												<tbody>
-													<tr class="space-row">
-														<th>Full Name:</th>
-														<td id="fullname-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Email Address:</th>
-														<td id="email-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Phone Number:</th>
-														<td id="phone-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>User:</th>
-														<td id="username-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Gender:</th>
-														<td id="gender-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Address:</th>
-														<td id="address-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Card Type:</th>
-														<td id="pay-val"></td>
-													</tr>
-													<tr class="space-row">
-														<th>CARD:</th>
-														<td id="MOMO"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Cards:</th>
-														<td id="MoMo"></td>
-													</tr>
-													<tr class="space-row">
-														<th>Card Type:</th>
-														<td id="cvc"></td>
-													</tr>
-												</tbody>
-											</table>
+									</section>
+									<!-- SECTION 4 -->
+									<h2>
+										<span class="step-icon"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+										<span class="step-text ">Place order</span>
+									</h2>
+									<section>
+										<div class="inner">
+											<h3 style="margin-left: -6px;">Confirm Details:</h3>
+											<div class="form-row table-responsive">
+												<table class="table">
+													<tbody>
+														<tr class="space-row">
+															<th>Full Name:</th>
+															<td id="fullname-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Email Address:</th>
+															<td id="email-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Phone Number:</th>
+															<td id="phone-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>User:</th>
+															<td id="username-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Gender:</th>
+															<td id="gender-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Address:</th>
+															<td id="address-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Card Type:</th>
+															<td id="pay-val"></td>
+														</tr>
+														<tr class="space-row">
+															<th>CARD:</th>
+															<td id="MOMO"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Cards:</th>
+															<td id="MoMo"></td>
+														</tr>
+														<tr class="space-row">
+															<th>Card Type:</th>
+															<td id="cvc"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
 										</div>
-									</div>
-								</section>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</aside>
-		<!-- CHECKOUT SUMMARY -->
-		<aside class="col-md-3">
-			<div class="card">
-				<div class="card-body">
-					<a>EDIT CART <span class="pull-right"><i class="fa fa-user"></i> put pencel</span></a>
-					<hr class="divider">
-					<div *ngFor="let c of cartData.data; let i=index">
-						<div class="col-md-12">
-							<figure class="itemside">
-								<div class="aside"><img [src]="c.product.image" alt="{{c.product.name}}"
-										class="border img-xs"></div>
-								<figcaption class="info">
-									<p class="p-t ">{{c.product.name}} </p>
-									<span class="p-t-b">{{c.numInCart}} x <span></span>
-										{{c.product.price | currency:'GHS '}}</span>
-									<div class="p-t-b">
-										{{cartService.CalculateSubTotal(i) | currency:'GHS '}}
-									</div>
-								</figcaption>
-							</figure>
-							<hr>
+									</section>
+								</div>
+							</form>
 						</div>
 					</div>
+				</div>
+			</aside>
+			<!-- CHECKOUT SUMMARY -->
+			<aside class="col-md-3">
+				<div class="card">
+					<div class="card-body">
+						<a routerLink="/cart" >EDIT CART <span class="pull-right"><i class="fa fa-edit"></i></span></a>
+						<hr class="divider">
+						<div *ngFor="let c of cartData.data; let i=index">
+							<div class="col-md-12">
+								<figure class="itemside">
+									<div class="aside"><img [src]="c.product.image" alt="{{c.product.name}}"
+											class="border img-xs"></div>
+									<figcaption class="info">
+										<p class="p-t ">{{c.product.name}} </p>
+										<span class="p-t-b">{{c.numInCart}} x <span></span>
+											{{c.product.price | currency:'GHS '}}</span>
+										<div class="p-t-b">
+											{{cartService.CalculateSubTotal(i) | currency:'GHS '}}
+										</div>
+									</figcaption>
+								</figure>
+								<hr>
+							</div>
+						</div>
 
-					<div class="mb-3">
-						<dl class="dlist-align">
-							<dt>Total price:</dt>
-							<dd class="text-right">{{cartTotal | currency: 'GHS '}}</dd>
-						</dl>
-						<dl class="dlist-align">
-							<dt>Shipping fee:</dt>
-							<dd class="text-right t-t"><strong>N/A</strong></dd>
-						</dl>
-						<dl class="dlist-align">
-							<dt>Total:</dt>
-							<dd class="text-right t-t "><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
-						</dl>
-						<hr>
-						<p class="text-center mb-3">
-							<img src="assets/img/misc/payments.png" height="26">
-						</p>
-					</div>
-				</div> <!-- card-body.// -->
-			</div> <!-- card .// -->
-		</aside>
+						<div class="mb-3">
+							<dl class="dlist-align">
+								<dt>Total price:</dt>
+								<dd class="text-right">{{cartTotal | currency: 'GHS '}}</dd>
+							</dl>
+							<dl class="dlist-align">
+								<dt>Shipping fee:</dt>
+								<dd class="text-right t-t"><strong>N/A</strong></dd>
+							</dl>
+							<dl class="dlist-align">
+								<dt>Total:</dt>
+								<dd class="text-right t-t "><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
+							</dl>
+							<hr>
+							<p class="text-center mb-3">
+								<img src="assets/img/misc/payments.png" height="26">
+							</p>
+							<p>	
+								<span class="step-text btn btn-primary full-width" [class.disabled]="cartTotal <= 0 " (click)="onCheckout()">Place order</span>
+							</p>
+						</div>
+					</div> <!-- card-body.// -->
+				</div> <!-- card .// -->
+			</aside>
+		</ng-container>
 	</div>
 </div>

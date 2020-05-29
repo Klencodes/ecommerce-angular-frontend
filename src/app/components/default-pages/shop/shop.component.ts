@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "src/app/services/product.service";
-import {ProductModelServer, serverResponse} from "src/app/models/product.model";
+import {ProductModelServer, ServerResponse} from "src/app/models/product.model";
 import {CartService} from "src/app/services/cart.service";
 import {Router} from "@angular/router";
 
@@ -20,9 +20,9 @@ export class ShopComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getAllProducts(12).subscribe((prods: serverResponse ) => {
+    this.productService.getAllProducts(12).subscribe((prods: ServerResponse ) => {
       this.products = prods.products;
-      console.log(this.products);
+      // console.log(this.products);
     });
 
 

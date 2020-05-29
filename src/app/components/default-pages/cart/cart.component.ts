@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CartModelServer } from 'src/app/models/cart.model';
 import { CartService } from 'src/app/services/cart.service';
+import {Observable} from "rxjs";
+
+
+
 
 @Component({
   selector: 'app-cart',
@@ -8,9 +12,9 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
   cartData: CartModelServer;
   cartTotal: Number;
+  subTotal: Number;
 
   constructor( public cartService: CartService ) { }
 

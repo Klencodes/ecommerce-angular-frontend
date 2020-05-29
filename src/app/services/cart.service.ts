@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {ProductService} from "./product.service";
 import {OrderService} from "./order.service";
 import {environment} from "../../environments/environment";
-import {CartModelServer, CartModelPublic,} from "../models/cart.model";
+import {CartModelServer, CartModelClient,} from "../models/cart.model";
 import {BehaviorSubject} from "rxjs";
 import {ProductModelServer} from "../models/product.model";
 import {NavigationExtras, Router} from "@angular/router";
@@ -18,13 +18,15 @@ export class CartService {
   private ServerURL = environment.SERVER_URL;
 
 //Data variables to store client information on the client's localStorage
-  private cartDataClient: CartModelPublic = {
+  private cartDataClient: CartModelClient = {
     prodData: [{
       incart: 0,
-      id: 0}],
-      total: 0};  // This will be sent to the backend Server as post data
+      id: 0
+    }],
+    total: 0
+  };  // This will be sent to the backend Server as post data
 
-  // Cart Data variable to store the cart information on the server
+  // Cart Data variable to store the cart information on the server (Angular not Backend)
   private cartDataServer: CartModelServer = {
     data: [{
       product: undefined,
@@ -49,7 +51,7 @@ export class CartService {
     this.cartTotal$.next(this.cartDataServer.total);
     this.cartDataObs$.next(this.cartDataServer);
 
-    let info: CartModelPublic = JSON.parse(localStorage.getItem('cart'));
+    let info: CartModelClient = JSON.parse(localStorage.getItem('cart'));
 
     if (info !== null && info !== undefined && info.prodData[0].incart !== 0) {
       // assign the value to our data variable which corresponds to the LocalStorage data format
@@ -247,7 +249,7 @@ export class CartService {
                 }
               };
               this.spinner.hide().then();
-              this.router.navigate(['/thank-you'], navigationExtras).then(p => {
+              this.router.navigate(['/confirmation'], navigationExtras).then(p => {
                 this.cartDataClient = {prodData: [{incart: 0, id: 0}], total: 0};
                 this.cartTotal$.next(0);
                 localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
