@@ -29,14 +29,27 @@
         <!-- CART AND USER PROFILE -->
         <div class="col-lg-3 col-md-11 col-sm-11 col-xxs-11 widget-pull-right">
           <div class="widgets-wrap float-right">
-            <div class="widget-header mr-3">
-              <a class="widget-view">
+            <div class="widget-header mr-3 removed-mt cursor-pointer">
+              <a class="widget-view" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <div class="icon-area">
                   <i class="fa fa-user"></i>
-                  <a routerLink="/profile"><i class="fa fa-user-o"></i></a>
                 </div>
-                <small class="text">  {{authState === false ? 'Login' : 'My account'}} </small>
+                <small class="text">{{authState === false ? 'Login' : 'Hi user '}} </small>
               </a>
+              <div class="dropdown-menu p-3 dropdown-menu-right cart-ps-items py-3">
+                <ul>
+                  <li routerLink="/login" >{{authState === false ? 'Login' : ' '}}</li>
+                  <li class="mt-2" routerLink="/signup" >{{authState === false ? 'Register' : ' '}}</li>
+                  <li class="mt-2" routerLink="/account" >{{authState === false ? ' ' : 'My account'}}</li>
+                  <li class="mt-2" (click)="logout()">{{authState === false ? ' ' : 'Logout'}}</li>
+                  <div class="pull-right mt-3">Help?</div>
+                </ul>
+              </div>
+              <!-- <ul class="header-links pull-right">
+                <li><a routerLink="/profile"><i class="fa fa-sign-in"></i> {{authState === false ? 'LOGIN' : 'My Account'}}</a></li>
+                <li *ngIf="!authState"><a routerLink="/register"><i class="fa fa-user-plus"></i> REGISTER</a></li>
+                <li><a href="/test/admin" *ngIf="authState"><i class="fa fa-user-plus"></i> ADMIN</a></li>
+              </ul> -->
             </div>
             <div class="widget-header">
               <a class="widget-view">
@@ -67,9 +80,9 @@
                       </figcaption>
                     </figure>
                     <div class="price-wrap py-3 border-top">Total: <strong
-                        class="h5 price">{{cartTotal | currency: 'GHS '}}</strong></div>
+                        class="h6 pull-right price">{{cartTotal | currency: 'GHS '}}</strong></div>
                         <a routerLink="/cart" class="btn btn-white btn-block">View Cart</a>
-                    <a routerLink="/checkout" class="btn btn-primary btn-block"> Checkout </a>
+                    <a routerLink="/checkout" class="btn btn-primary btn-block" style="color: #fff;"> Checkout </a>
                   </div> <!-- drowpdown-menu.// -->
                 </div>
               </a>
@@ -84,7 +97,7 @@
     <nav class="navbar navbar-main navbar-expand-lg border-bottom">
       <div class="container">
   
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
+        <button class="navbar-toggler" style="z-index: 2;" type="button" data-toggle="collapse" data-target="#main_nav"
           aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

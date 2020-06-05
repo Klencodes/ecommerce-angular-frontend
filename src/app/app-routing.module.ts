@@ -12,6 +12,7 @@ import { AccountComponent } from './components/account-detail/account/account.co
 import { OrderHistoryComponent } from './components/account-detail/order-history/order-history.component';
 import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
 import { ConfirmationComponent } from './components/common/confirmation/confirmation.component';
+import { ProfileGuard } from './guards/profile.guard';
 import { PageNotFoundComponent } from './components/common/page-not-found/page-not-found.component';
 
 
@@ -24,11 +25,12 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'confirmation', component: ConfirmationComponent },
-  {path: 'account', component : AccountComponent, children: [
-    {path: 'orders', component : OrderHistoryComponent},
-    {path: 'transactions', component : TransactionsComponent}
-  ]},
+  { path: 'confirmation', component: ConfirmationComponent, canActivate: [ProfileGuard] },
+  // {path: 'account', component : AccountComponent, children: [
+  //   {path: 'account/orders', component : OrderHistoryComponent, canActivate: [ProfileGuard]},
+  //   {path: 'account/transactions', component : TransactionsComponent, canActivate: [ProfileGuard]}
+  // ]},
+  {path: 'account', component : AccountComponent, canActivate: [ProfileGuard]},
   { path: '**', component: PageNotFoundComponent },
 
 ];

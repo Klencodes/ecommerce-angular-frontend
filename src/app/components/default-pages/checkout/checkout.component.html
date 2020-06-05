@@ -1,356 +1,320 @@
-<ngx-spinner
-  bdColor= "rgba(151,149,149,0.4)"
-  size="large"
-  color="orange"
-  type="ball-clip-rotate-pulse"
-  fullScreen="true"
->
-  <p style="font-size: 20px; color: black">Placing Order...</p>
+<ngx-spinner bdColor="rgba(151,149,149,0.4)" size="large" color="orange" type="ball-clip-rotate-pulse"
+	fullScreen="true">
+	<p style="font-size: 20px; color: black">Placing Order...</p>
 </ngx-spinner>
-
+<app-header></app-header>
 <div class="container">
-	<app-header></app-header>
 	<hr class="divider">
 	<div class="container">
 		<!-- When the cart is empty -->
 		<div class="text-center" *ngIf="cartData.data[0].numInCart === 0">
-		  <h4>No item(s) to checkout</h4>
-	  
-		  <div class="my-2">
-			<img src="assets/img/icons/404.png" class="empty-box" alt="">
-		  </div>
-		  <button class="btn btn-primary mt-3 to-uppercase-bold" routerLink="/">
-			Go to shop
-		  </button>
+			<h4>No item(s) to checkout</h4>
+			<div class="my-2">
+				<img src="assets/img/icons/404.png" class="empty-box" alt="">
+			</div>
+			<button class="btn btn-primary mt-3 to-uppercase-bold" routerLink="/">
+				Go to shop
+			</button>
 		</div>
 	</div>
-	<div class="row">
-		<ng-container *ngIf="cartData.data[0].numInCart !== 0">
-
-			<aside class="col-md-9">
-				<div class="page-content">
-					<div class="wizard-v3-content">
-						<div class="wizard-form">
-							<div class="wizard-header">
-								<h4 class="heading">Provide valid information</h4>
-								<p></p>
-							</div>
-							<form class="form-register">
-								<div id="form-total">
-									<!-- SECTION 1 -->
-									<h2>
-										<span class="step-icon"><i class="fa fa-lock"></i></span>
-										<span class="step-text">Account</span>
-									</h2>
-									<section>
-										<div class="inner">
-											<h3 style="margin-left: -6px;">Account Information:</h3>
-											<div class="row">
-												<div class="form-row">
-													<div class="col-md-12">
-														<div class="form-row form-row-date ">
-															<div class="form-holder form-holder-2">
-																<input type="text" placeholder="Email *"
-																	class="form-control" id="email" name="email" required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input class="form-control"
-																	placeholder="Phone Number (Optional)" id="phone"
-																	name="phone" required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-group gender-p"> Gender :
-															<label class="custom-control custom-radio custom-control-inline">
-															<input class="custom-control-input" checked="" type="radio" name="gender" value="male">
-															<span class="custom-control-label"> Male </span>
-															</label>
-															<label class="custom-control custom-radio custom-control-inline">
-															<input class="custom-control-input" type="radio" name="gender" value="female">
-															<span class="custom-control-label"> Female </span>
-															</label>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="password" placeholder="Password *"
-																	class="form-control" id="password" name="password"
-																	required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="password" class="form-control"
-																	placeholder="Re-Type Password *" id="comfirm_password"
-																	name="comfirm_password" required>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<!-- SECTION 2 -->
-									<h2>
-										<span class="step-icon"><i class="fa fa-user"></i></span>
-										<span class="step-text">Personal</span>
-									</h2>
-									<section>
-										<div class="inner">
-											<h3 style="margin-left: -6px;">Address Information:</h3>
-											<div class="row">
-												<div class="form-row">
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" class="form-control"
-																	placeholder="Country *" id="country" name="country"
-																	required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" placeholder="State|Region *"
-																	class="form-control" id="state" name="state" required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" placeholder="City *" class="form-control"
-																	id="city" name="city" required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" class="form-control"
-																	placeholder="Address *" id="address" name="address"
-																	required>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<!-- SECTION 3 -->
-									<h2>
-										<span class="step-icon"><i class="fa fa-credit-card"></i></span>
-										<span class="step-text">Payment</span>
-									</h2>
-									<section>
-										<div class="inner">
-											<h3 style="margin-left: -6px;">Payment Information:</h3>
-											<div class="row">
-												<div class="form-row">
-													<div class="col-md-12">
-														
-														<div class="row">
-															<div class="col-md-4">
-																<div class="form-row form-row-date">
-																	<div class="form-holder form-holder-2">
-																		<div class="form-holder form-holder-2">
-																			<input style="border: none;" type="radio" name="radio1" id="Credit-Card"
-																				value="CREDIT_CARD">
-																			<label class="pay-1-label" for="pay-1"><img
-																					src="assets/img/icons/credit_card.png"
-																					alt="pay-1">Credit
-																				Card</label>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-4">
-																<div class="form-row form-row-date">
-																	<div class="form-holder form-holder-2">
-																		<input style="border: none;"  type="radio" name="radio1" id="PayPal"
-																			value="PAYPAL">
-																		<label class="pay-2-label" for="pay-2"><img class="paypal_icon"
-																				src="assets/img/icons/paypal.png"
-																				alt="pay-2">Paypal</label>
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-4">
-																<div class="form-row form-row-date">
-																	<div class="form-holder form-holder-2">
-																		<input style="border: none;" type="radio" name="radio1" id="MoMo"
-																			value="MOMO">
-																		<label class="pay-3-label" for="pay-3"><img class="momo-icons"
-																				src="assets/img/icons/momoGh.png"
-																				alt="pay-3">Mobile Money</label>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-12">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" class="form-control"
-																	placeholder="Holder Name" id="holder" name="holder"
-																	required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="form-row form-row-date">
-															<div class="form-holder form-holder-2">
-																<input type="text" class="form-control"
-																	placeholder="Card Number *" id="card" name="card"
-																	required>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="row">
-															<div class="col-md-6">
-																<div class="form-row form-row-date">
-																	<div class="form-holder form-holder-2">
-																		<input type="text" class="form-control"
-																			placeholder="CVC *" class="form-control"
-																			id="cvc" name="cvc" required>
-																	</div>
-																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="form-row form-row-date">
-																	<div class="form-holder form-holder-2">
-																		<input type="text" class="form-control"
-																			placeholder="Expire Date *" id="date"
-																			name="expire_date" required>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<!-- SECTION 4 -->
-									<h2>
-										<span class="step-icon"><i class="fa fa-list-alt" aria-hidden="true"></i></span>
-										<span class="step-text ">Place order</span>
-									</h2>
-									<section>
-										<div class="inner">
-											<h3 style="margin-left: -6px;">Confirm Details:</h3>
-											<div class="form-row table-responsive">
-												<table class="table">
-													<tbody>
-														<tr class="space-row">
-															<th>Full Name:</th>
-															<td id="fullname-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Email Address:</th>
-															<td id="email-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Phone Number:</th>
-															<td id="phone-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>User:</th>
-															<td id="username-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Gender:</th>
-															<td id="gender-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Address:</th>
-															<td id="address-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Card Type:</th>
-															<td id="pay-val"></td>
-														</tr>
-														<tr class="space-row">
-															<th>CARD:</th>
-															<td id="MOMO"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Cards:</th>
-															<td id="MoMo"></td>
-														</tr>
-														<tr class="space-row">
-															<th>Card Type:</th>
-															<td id="cvc"></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</section>
+	<div class="my-3 mx-3 p-2">
+		<div class="row">
+			<ng-container *ngIf="cartData.data[0].numInCart !== 0">
+				<aside class="col-md-9">
+					<mat-vertical-stepper #stepper>
+						<mat-step [stepControl]="personalFormGroup">
+							<form [formGroup]="personalFormGroup">
+								<ng-template matStepLabel>Personal details</ng-template>
+								<div class="row">
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>First Name</mat-label>
+											<input matInput formControlName="first_name" placeholder="John" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>Last Name</mat-label>
+											<input matInput formControlName="last_name" placeholder="Doe" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-12">
+										<mat-form-field>
+											<mat-label>Email</mat-label>
+											<input matInput type="email" formControlName="email"
+												placeholder="example@xyz.com" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>Password</mat-label>
+											<input matInput type="password" formControlName="password"
+												placeholder="Password" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>Confirm Password</mat-label>
+											<input matInput type="password" formControlName="confirm_password"
+												placeholder="Confirm Password" required>
+										</mat-form-field>
+									</div>
+								</div>
+								<div>
+									<!-- <button matStepperPrevious class="btn btn-primary px-4 pull-left" >Next</button> -->
+									<button matStepperNext class="btn btn-primary px-4 pull-right">Next</button>
 								</div>
 							</form>
-						</div>
-					</div>
-				</div>
-			</aside>
-			<!-- CHECKOUT SUMMARY -->
-			<aside class="col-md-3">
-				<div class="card">
-					<div class="card-body">
-						<a routerLink="/cart" >EDIT CART <span class="pull-right"><i class="fa fa-edit"></i></span></a>
-						<hr class="divider">
-						<div *ngFor="let c of cartData.data; let i=index">
-							<div class="col-md-12">
-								<figure class="itemside">
-									<div class="aside"><img [src]="c.product.image" alt="{{c.product.name}}"
-											class="border img-xs"></div>
-									<figcaption class="info">
-										<p class="p-t ">{{c.product.name}} </p>
-										<span class="p-t-b">{{c.numInCart}} x <span></span>
-											{{c.product.price | currency:'GHS '}}</span>
-										<div class="p-t-b">
-											{{cartService.CalculateSubTotal(i) | currency:'GHS '}}
+						</mat-step>
+						<mat-step [stepControl]="addressFormGroup">
+							<form [formGroup]="addressFormGroup">
+								<ng-template matStepLabel>Address details</ng-template>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-9">
+												<mat-form-field>
+													<mat-label>Address</mat-label>
+													<input matInput formControlName="address"
+														placeholder="Ex. 1 Main St, Comm 8, Tema" required>
+												</mat-form-field>
+											</div>
+											<div class="col-md-3">
+												<mat-form-field>
+													<mat-label>Postal Code</mat-label>
+													<input matInput formControlName="postal_code"
+														placeholder="Postal Code" required>
+												</mat-form-field>
+											</div>
 										</div>
-									</figcaption>
-								</figure>
-								<hr>
-							</div>
-						</div>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>City</mat-label>
+											<input matInput formControlName="city" placeholder="Accra" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>State|Region</mat-label>
+											<input matInput formControlName="state" placeholder="State|Region" required>
+										</mat-form-field>
+									</div>
+									<div class="col-md-6">
+										<mat-form-field>
+											<mat-label>Country</mat-label>
+											<input matInput formControlName="country" placeholder="Country" required>
+										</mat-form-field>
+									</div>
+								</div>
+								<div>
+									<button matStepperPrevious class="btn btn-primary px-4 pull-left">Back</button>
+									<button matStepperNext class="btn btn-primary px-4 pull-right">Next</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step [stepControl]="paymentFormGroup">
+							<form [formGroup]="paymentFormGroup">
+								<ng-template matStepLabel>Payment Information</ng-template>
+								<div class="row">
+									<div class="col-md-12 py-3 px-3">
+										<!-- Credit card form tabs -->
+										<ul role="tablist"
+											class="nav bg-transparent d-flex justify-content-around nav-pills mb-3">
+											<li class="nav-item">
+												<a data-toggle="pill" href="#nav-tab-card" class="nav-link active">
+													<img class="master-credit-card"
+														src="assets/img/icons/credit-master.png"
+														alt="Master-Credit Card">
+												</a>
+											</li>
+											<li class="nav-item">
+												<a data-toggle="pill" href="#nav-tab-paypal" class="nav-link">
+													<img class="momo-icon" src="assets/img/icons/momoGh.png"
+														alt="MoMo Gh">
+												</a>
+											</li>
+											<li class="nav-item">
+												<a data-toggle="pill" href="#nav-tab-bank" class="nav-link">
+													<img class="paypal_icon" src="assets/img/icons/paypal.jpg"
+														alt="PayPal">
+												</a>
+											</li>
+										</ul>
+										<!-- End -->
+										<!-- Credit card form content -->
+										<div class="tab-content">
+											<!-- credit card info-->
+											<div id="nav-tab-card" class="tab-pane fade show active">
+												<p class="alert alert-success mt-2 text-center">Master/Credit Card
+													payment option</p>
+												<div class="row">
+													<div class="col-md-12">
+														<mat-form-field>
+															<mat-label>Full Name</mat-label>
+															<input matInput placeholder="Full name (on the card)"
+																formControlName="full_name" required>
+														</mat-form-field>
+													</div>
+													<div class="col-md-6 col-xs-12">
+														<mat-form-field>
+															<mat-label>Card Number</mat-label>
+															<input matInput type="number" placeholder="Card Number"
+																formControlName="card_number" required>
+														</mat-form-field>
+													</div>
+													<div class="col-md-6 col-xs-12">
+														<div class="row">
+															<div class="col-md-6">
+																<mat-form-field>
+																	<mat-label>Expiration</mat-label>
+																	<input matInput placeholder="Expires date"
+																		formControlName="expires_date" required>
+																</mat-form-field>
+															</div>
+															<div class="col-md-6">
+																<mat-form-field>
+																	<mat-label>CVV</mat-label>
+																	<input matInput type="number" placeholder="CVV"
+																		formControlName="cvv_number" required>
+																</mat-form-field>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- End -->
 
-						<div class="mb-3">
-							<dl class="dlist-align">
-								<dt>Total price:</dt>
-								<dd class="text-right">{{cartTotal | currency: 'GHS '}}</dd>
-							</dl>
-							<dl class="dlist-align">
-								<dt>Shipping fee:</dt>
-								<dd class="text-right t-t"><strong>N/A</strong></dd>
-							</dl>
-							<dl class="dlist-align">
-								<dt>Total:</dt>
-								<dd class="text-right t-t "><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
-							</dl>
-							<hr>
-							<p class="text-center mb-3">
-								<img src="assets/img/misc/payments.png" height="26">
-							</p>
-							<p>	
-								<span class="step-text btn btn-primary full-width" [class.disabled]="cartTotal <= 0 " (click)="onCheckout()">Place order</span>
-							</p>
-						</div>
-					</div> <!-- card-body.// -->
-				</div> <!-- card .// -->
-			</aside>
-		</ng-container>
+											<!-- payment momo ghana -->
+											<div id="nav-tab-paypal" class="tab-pane fade">
+												<p class="alert alert-success mt-2 text-center">Select your network type
+													and enter your mobile number</p>
+												<mat-tab-group mat-align-tabs="center">
+													<mat-tab label="MTN Mobile Money">
+														<mat-form-field>
+															<mat-label>Mobile Number</mat-label>
+															<input matInput type="number"
+																placeholder="Registered MoMo Number"
+																formControlName="phone_number" required>
+														</mat-form-field>
+													</mat-tab>
+													<mat-tab label="AirTel-Tigo Money">
+														<mat-form-field>
+															<mat-label>Mobile Number</mat-label>
+															<input matInput type="number"
+																placeholder="Registered MoMo Number"
+																formControlName="phone_number" required>
+														</mat-form-field>
+													</mat-tab>
+													<mat-tab label="VodaCash">
+														<mat-form-field>
+															<mat-label>Mobile Number</mat-label>
+															<input matInput type="number"
+																placeholder="Registered MoMo Number"
+																formControlName="phone_number" required>
+														</mat-form-field>
+														<mat-form-field>
+															<mat-label>Voucher Code</mat-label>
+															<input matInput type="number" placeholder="Voucher Code"
+																formControlName="voda_voucher" required>
+														</mat-form-field>
+													</mat-tab>
+												</mat-tab-group>
+											</div>
+											<!-- End -->
+
+											<!-- paypal payment -->
+											<div id="nav-tab-bank" class="tab-pane fade text-center">
+												<p class="alert alert-success mt-2">PayPal payment option</p>
+												<p>To be able to continue, you have to login to your paypal account to
+													make payment</p>
+												<p>
+													<button type="button" class="btn btn-primary">
+														Login to my Paypal
+													</button>
+												</p>
+											</div>
+											<!-- End -->
+										</div>
+										<!-- End -->
+
+									</div>
+								</div>
+								<div>
+									<button matStepperPrevious class="btn btn-primary px-4 pull-left">Back</button>
+									<button matStepperNext class="btn btn-primary px-4 pull-right">Next</button>
+								</div>
+							</form>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Done</ng-template>
+							<p>You are now done.</p>
+							<div>
+								<button mat-button matStepperPrevious>Back</button>
+								<button mat-button (click)="stepper.reset()">Reset</button>
+							</div>
+						</mat-step>
+						<!-- Icon overrides. -->
+						<ng-template matStepperIcon="phone">
+							<mat-icon>call_end</mat-icon>
+						</ng-template>
+						<ng-template matStepperIcon="chat">
+							<mat-icon>forum</mat-icon>
+						</ng-template>
+					</mat-vertical-stepper>
+				</aside>
+				<!-- CHECKOUT SUMMARY -->
+				<aside class="col-md-3">
+					<div class="card">
+						<div class="card-body">
+							<a routerLink="/cart">EDIT CART <span class="pull-right"><i
+										class="fa fa-edit"></i></span></a>
+							<hr class="divider">
+							<div *ngFor="let c of cartData.data; let i=index">
+								<div class="col-md-12">
+									<figure class="itemside">
+										<div class="aside"><img [src]="c.product.image" alt="{{c.product.name}}"
+												class="border img-xs"></div>
+										<figcaption class="info">
+											<p class="p-t ">{{c.product.name}} </p>
+											<span class="p-t-b">{{c.numInCart}} x <span></span>
+												{{c.product.price | currency:'GHS '}}</span>
+											<div class="p-t-b">
+												{{cartService.CalculateSubTotal(i) | currency:'GHS '}}
+											</div>
+										</figcaption>
+									</figure>
+									<hr>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<dl class="dlist-align">
+									<dt>Total price:</dt>
+									<dd class="text-right">{{cartTotal | currency: 'GHS '}}</dd>
+								</dl>
+								<dl class="dlist-align">
+									<dt>Shipping fee:</dt>
+									<dd class="text-right t-t"><strong>N/A</strong></dd>
+								</dl>
+								<dl class="dlist-align">
+									<dt>Total:</dt>
+									<dd class="text-right t-t "><strong>{{cartTotal | currency: 'GHS '}}</strong></dd>
+								</dl>
+								<hr>
+								<p class="text-center mb-3">
+									<img src="assets/img/misc/payments.png" height="26">
+								</p>
+								<p>
+									<span class="step-text btn btn-primary full-width"
+										[class.disabled]="cartTotal <= 0 " (click)="onCheckout()">Place order</span>
+								</p>
+							</div>
+						</div> <!-- card-body.// -->
+					</div> <!-- card .// -->
+				</aside>
+			</ng-container>
+		</div>
 	</div>
+
 </div>

@@ -13,39 +13,26 @@
   .nav-home-aside {
     width: 200px; } }
 @media (max-width: 992px) {
+  .search-header-my {
+    margin-top: 24px !important;
+    margin-bottom: -66px !important;
+  }
+  .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0 solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0 !important;
+    border-left: 0.3em solid transparent;
+  }
   .widget-pull-right {
     position: relative;
-    top: 76px;
-    /* z-index: 1; */
-}
-.search-header-my {
-  margin-top: 24px !important;
-  margin-bottom: -60px !important;
-}
-.dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0 solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0 !important;
-  border-left: 0.3em solid transparent;
-}
-  .widget-pull-right { 
-    position: relative;
-    top: 101px;
+    top: 84px;
     z-index: 2;
-    left: 9%;
-  }
-  .widget-header .widget-view {
-    padding: 5px 7px;
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    top: -21px !important;
-  }
-
+    left: 6%;
+}
   /* small tablet devices */
   .table-shopping-cart tr td:first-child {
     width: 250px; }
@@ -87,25 +74,24 @@
 		margin-left: 0;
   }
   .form-register .steps .current .step-icon::before,
-.form-register .steps .current:last-child .step-icon::after,
-.form-register .steps .done .step-icon::before {
-    background: white;
-    border: 2px solid #ff6a00 !important;
-}
-.form-register .steps li .step-icon::before, .form-register .steps li:last-child .step-icon::after {
-  position: absolute;
-  content: "";
-  background: #e5e5e5;
-  width: 50px !important;
-  height: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-}
-
+  .form-register .steps .current:last-child .step-icon::after,
+  .form-register .steps .done .step-icon::before {
+      background: white;
+      border: 2px solid #ff6a00 !important;
+  }
+  .form-register .steps li .step-icon::before, .form-register .steps li:last-child .step-icon::after {
+    position: absolute;
+    content: "";
+    background: #e5e5e5;
+    width: 50px !important;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
 }
 
 
@@ -224,6 +210,9 @@
 }
 
 @media screen and (max-width: 575px) {
+  body {
+    font-size: 14px !important;
+  }
 	.wizard-v3-content {
 		width: 100%;
 	}
@@ -282,8 +271,33 @@
 	}
 	.actions ul li a {
 	    padding: 15px 24px;
-	}
+  }
+  
+  .wizard {
+    width: 90%;
+    height: auto !important;
+  }
+
+  span.round-tab {
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard .nav-tabs > li a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+  }
 }
+
 
 @media all and (max-width: 480px) {
   .card-sm .img-wrap {

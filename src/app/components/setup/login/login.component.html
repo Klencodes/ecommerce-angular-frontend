@@ -1,1 +1,116 @@
-<p>login works!</p>
+<app-header></app-header>
+<!-- <div class="container">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-6 d-flex mx-auto flex-column">
+          <ng-container *ngIf="loginMessage?.length > 0">
+            <div class="alert alert-danger alert-dismissible text-center">
+              {{loginMessage}}
+            </div>
+          </ng-container>
+          <form novalidate #myform="ngForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input class="form-control" id="email" type="email" [(ngModel)]="email" name="email" required>
+            </div>
+  
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input class="form-control" id="password" type="password" [(ngModel)]="password" name="password" required>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-around">
+              <button class="btn btn-primary btn-sm btn-block" (click)="login(myform)" [disabled]="myform.invalid && myform.touched">Login</button>
+              <hr>
+              <h4 class="text-uppercase"><strong>Login Using</strong></h4>
+  
+              <button (click)="signInWithGoogle()" class="btn btn-danger btn-sm btn-block mt-4"><span><i
+                class="fa fa-google"></i> Google </span>
+              </button>
+            </div>
+          </form>
+  
+  
+        </div>
+      </div>
+    </div>
+</div>
+<section class="section-conten padding-y" style="min-height:84vh">
+
+ ============================ COMPONENT LOGIN   ================================= 
+    <div class="card mx-auto card-wh">
+        <div class="card-body">
+        <h4 class="card-title mb-4">Sign in</h4>
+        <form>
+            <a href="#" class="btn btn-guest btn-block mb-2"> <i class="fa fa-user-secret"></i> &nbsp; Signin as Guest</a>
+            <a (click)="signInWithGoogle()" class="btn btn-google btn-block mb-4"> <i class="fab fa-google"></i> &nbsp;  Sign in with Google</a>
+            <div class="form-group">
+         <input name="" class="form-control" placeholder="Username" type="text">
+            </div> 
+            <div class="form-group">
+        <input name="" class="form-control" placeholder="Password" type="password">
+            </div> 
+            
+            <div class="form-group">
+              <a href="#" class="float-right">Forgot password?</a> 
+             <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+            </div>    
+        </form>
+        </div>
+      </div> 
+  
+       <p class="text-center mt-4">Don't have account? <a href="#">Sign up</a></p>
+       <br><br>
+  </section> -->
+
+  <section class="container">
+    <div class="mx-auto my-4" style="min-height: 60vh; max-width: 500px;">
+      <div class="card mx-auto p-3">
+        <div class="card-body">
+          <div class="log-sign-tx pb-4">Sign in</div>
+          <form action="" [formGroup]="signinForm">
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" formControlName="email"
+                    placeholder="example@xyz.com" required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" formControlName="password"
+                    placeholder="Password" required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-12 mb-3" style="margin-top: -7px;">
+                <a routerLink="/forgot-password" class="pull-right">Forgot password?</a> 
+                <!-- <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label> -->
+              </div>
+              <div class="col-md-12 ">
+                <button class="btn btn-primary full-width">Login</button>
+              </div>
+              <div class="col-md-12 my-4">
+                <a href="#" class="btn btn-guest btn-block"> <i class="fa fa-user-secret"></i> &nbsp; Signin as Guest</a>
+              </div>
+              <div class="col-md-12">
+                <a (click)="signInWithGoogle()" class="btn btn-google btn-block"> <i class="fab fa-google"></i> &nbsp;  Sign in with Google</a>
+              </div>
+            </div> 
+            <div class="mt-3">
+              <div class="col-md-12">
+                <div class="pull-right">Don't have account? <a routerLink="/signup">Sign up</a> </div>
+              </div>
+            </div>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+<app-footer></app-footer>

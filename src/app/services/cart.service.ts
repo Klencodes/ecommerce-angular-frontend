@@ -14,6 +14,9 @@ import {NgxSpinnerService} from "ngx-spinner";
   providedIn: 'root'
 })
 export class CartService {
+  UpdateCartItems(index: number, increase: boolean) {
+    throw new Error("Method not implemented.");
+  }
 
   private ServerURL = environment.SERVER_URL;
 
@@ -39,6 +42,8 @@ export class CartService {
   // Data variable to store the cart information on the client's local storage
 
   cartDataObs$ = new BehaviorSubject<CartModelServer>(this.cartDataServer);
+  cartData: any;
+  cartTotal: any;
 
 
   constructor(private productService: ProductService,
@@ -227,7 +232,7 @@ export class CartService {
     }
   }
 
-  CheckoutFromCart(userId: Number) {
+  CheckoutFromCart(userId: any) {
     this.httpClient.post(`${this.ServerURL}orders/payment`, null).subscribe((res: { success: Boolean }) => {
       console.clear();
 
@@ -261,7 +266,7 @@ export class CartService {
       } else {
         this.spinner.hide().then();
         this.router.navigateByUrl('/checkout').then();
-        this.toast.error(`Sorry, failed to book the order`, "Order Status", {
+        this.toast.error(`Sorry, failed to place the order`, "Order Status", {
           timeOut: 1500,
           progressBar: true,
           progressAnimation: 'increasing',

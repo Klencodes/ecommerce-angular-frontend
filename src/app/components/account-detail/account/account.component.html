@@ -1,78 +1,301 @@
-<div class="container">
-    <app-header></app-header>
-    <div class="row my-5">
-        <aside class="col-md-3 col-sm-12">
-            <!--   SIDEBAR   -->
-            <ul class="list-group">
-                <a class="list-group-item active" href="#"> My order history </a>
-                <a class="list-group-item" href="#"> Transactions </a>
-                <a class="list-group-item" href="#"> Return and refunds </a>
-                <a class="list-group-item" href="#">Settings </a>
-                <a class="list-group-item" href="#"> My Selling Items </a>
-                <a class="list-group-item" href="#"> Received orders </a>
+<div class="container emp-profile">
+    <form novalidate>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img [src]="myUser?.photoUrl" alt="{{myUser?.firstName || myUser?.fname}}"/>
+            <div class="file btn btn-lg btn-primary">
+              Change Photo
+              <input name="file" type="file"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              {{myUser?.name || (myUser.fname + ' ' + myUser.lname)}}
+            </h5>
+            <h6>
+              Web Developer and Designer
+            </h6>
+            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home" id="home-tab"
+                   role="tab">About</a>
+              </li>
+              <li class="nav-item">
+                <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#profile" id="profile-tab"
+                   role="tab">Timeline</a>
+              </li>
             </ul>
-            <br>
-            <a class="btn btn-light btn-block" href="#"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
-            <!--   SIDEBAR .//END   -->
-        </aside>
-        <main class="col-md-9 col-sm-12">
-            <article class="card">
-            <header class="card-header">
-                <strong class="d-inline-block mr-3">Order ID: 6123456789</strong>
-                <span>Order Date: 16 December 2018</span>
-            </header>
-            <div class="card-body">
-                <div class="row"> 
-                    <div class="col-md-8">
-                        <h6 class="text-muted">Delivery to</h6>
-                        <p>Michael Jackson <br>  
-                        Phone +1234567890 Email: myname@pixsellz.com <br>
-                        Location: Home number, Building name, Street 123,  Tashkent, UZB <br> 
-                        P.O. Box: 100123
-                         </p>
-                    </div>
-                    <div class="col-md-4">
-                        <h6 class="text-muted">Payment</h6>
-                        <span class="text-success">
-                            <i class="fab fa-lg fa-cc-visa"></i>
-                            Visa  **** 4216  
-                        </span>
-                        <p>Subtotal: $356 <br>
-                         Shipping fee:  $56 <br> 
-                         <span class="b">Total:  $456 </span>
-                        </p>
-                    </div>
-                </div> <!-- row.// -->
-            </div> <!-- card-body .// -->
-            <div class="table-responsive">
-            <table class="table table-hover">
-                <tbody><tr>
-                    <td width="65">
-                        <img src="assets/img/items/1.jpg" class="img-xs border">
-                    </td>
-                    <td> 
-                        <p class="title mb-0">Product name goes here </p>
-                        <var class="price text-muted">USD 145</var>
-                    </td>
-                    <td> Seller <br> Nike clothing </td>
-                    <td width="250"> <a href="#" class="btn btn-outline-primary">Track order</a> <a href="#" class="btn btn-light"> Details </a> </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="bootstrap-ecommerce-html/images/items/2.jpg" class="img-xs border">
-                    </td>
-                    <td> 
-                        <p class="title mb-0">Another name goes here </p>
-                        <var class="price text-muted">USD 15</var>
-                    </td>
-                    <td> Seller <br> ABC shop </td>
-                    <td> <a href="#" class="btn btn-outline-primary">Track order</a> <a href="#" class="btn btn-light"> Details </a> </td>
-                </tr>
-            </tbody></table>
-            </div> <!-- table-responsive .end// -->
-            </article> <!-- order-group.// --> 
-        </main>
-        
-    </div>
-    <app-footer></app-footer>
-</div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button (click)="logout()" class="btn btn-secondary btn-sm" name="btnAddMore" type="button">Logout</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-work">
+            <p>WORK LINK</p>
+            <a href="">Website Link</a><br/>
+            <a href="">Bootsnipp Profile</a><br/>
+            <a href="">Bootply Profile</a>
+            <p>SKILLS</p>
+            <a href="">Web Designer</a><br/>
+            <a href="">Web Developer</a><br/>
+            <a href="">WordPress</a><br/>
+            <a href="">WooCommerce</a><br/>
+            <a href="">PHP, .Net</a><br/>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>User Id</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{myUser.id || myUser.userId}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{myUser.name || myUser.username}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{myUser.email}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Phone</label>
+                </div>
+                <div class="col-md-6">
+                  <p>9999-778-754</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Profession</label>
+                </div>
+                <div class="col-md-6">
+                  <p>Web Developer and Designer</p>
+                </div>
+              </div>
+            </div>
+            <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Experience</label>
+                </div>
+                <div class="col-md-6">
+                  <p>Expert</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Hourly Rate</label>
+                </div>
+                <div class="col-md-6">
+                  <p>10$/hr</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Total Projects</label>
+                </div>
+                <div class="col-md-6">
+                  <p>230</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>English Level</label>
+                </div>
+                <div class="col-md-6">
+                  <p>Expert</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Availability</label>
+                </div>
+                <div class="col-md-6">
+                  <p>6 months</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Your Bio</label><br/>
+                  <p>Your detail description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-header></app-header>
+<section class="section-content padding-y">
+  <div class="container">
+  
+  <div class="row">
+    <aside class="col-md-3">
+      <ul class="list-group">
+        <a class="list-group-item active" href="#"> Account overview  </a>
+        <a class="list-group-item" href="#"> My Orders </a>
+        <a class="list-group-item" href="#"> My wishlist </a>
+        <a class="list-group-item" href="#"> Return and refunds </a>
+        <a class="list-group-item" href="#">Settings </a>
+        <a class="list-group-item" href="#"> My Selling Items </a>
+        <a class="list-group-item" href="#"> Received orders </a>
+        <a class="btn btn-light btn-block mt-3" (click)="logout()"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
+      </ul>
+    </aside> <!-- col.// -->
+    <main class="col-md-9">
+      <article class="card mb-2">
+        <div class="card-body">
+          
+          <figure class="icontext">
+              <div class="icon">
+                <img class="rounded-circle img-sm border" [src]="myUser?.photoUrl" alt="{{myUser?.firstName || myUser?.fname}}">
+              </div>
+              <div class="text">
+                <strong>  {{myUser?.name || (myUser.fname + ' ' + myUser.lname)}} </strong> <br> 
+                {{myUser.email}} <br> 
+                <a href="#">Edit</a>
+              </div>
+          </figure>
+          <hr>
+          <p>
+            <i class="fa fa-map-marker text-muted"></i> &nbsp; My address:  
+             <br>
+            Tashkent city, Street name, Building 123, House 321 &nbsp; 
+            <a href="#" class="btn-link"> Edit</a>
+          </p>
+  
+          
+  
+          <article class="card-group">
+            <figure class="card bg">
+              <div class="p-3">
+                 <h5 class="card-title">38</h5>
+                <span>Orders</span>
+              </div>
+            </figure>
+            <figure class="card bg">
+              <div class="p-3">
+                 <h5 class="card-title">5</h5>
+                <span>Wishlists</span>
+              </div>
+            </figure>
+            <figure class="card bg">
+              <div class="p-3">
+                 <h5 class="card-title">12</h5>
+                <span>Awaiting delivery</span>
+              </div>
+            </figure>
+            <figure class="card bg">
+              <div class="p-3">
+                 <h5 class="card-title">50</h5>
+                <span>Delivered items</span>
+              </div>
+            </figure>
+          </article>
+          
+  
+        </div> <!-- card-body .// -->
+      </article> <!-- card.// -->
+  
+      <article class="card  mb-3">
+        <div class="card-body">
+          <h5 class="card-title mb-4">Recent orders </h5>	
+  
+          <div class="row">
+          <div class="col-md-6">
+            <figure class="itemside  mb-3">
+              <div class="aside"><img src="images/items/1.jpg" class="border img-sm"></div>
+              <figcaption class="info">
+                <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
+                <p>Great item name goes here </p>
+                <span class="text-warning">Pending</span>
+              </figcaption>
+            </figure>
+          </div> <!-- col.// -->
+          <div class="col-md-6">
+            <figure class="itemside  mb-3">
+              <div class="aside"><img src="images/items/2.jpg" class="border img-sm"></div>
+              <figcaption class="info">
+                <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
+                <p>Machine for kitchen to blend </p>
+                <span class="text-success">Departured</span>
+              </figcaption>
+            </figure>
+          </div> <!-- col.// -->
+          <div class="col-md-6">
+            <figure class="itemside mb-3">
+              <div class="aside"><img src="images/items/3.jpg" class="border img-sm"></div>
+              <figcaption class="info">
+                <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
+                <p>Ladies bag original leather </p>
+                <span class="text-success">Shipped  </span>
+              </figcaption>
+            </figure>
+          </div> <!-- col.// -->
+        </div> <!-- row.// -->
+  
+        <a href="#" class="btn btn-outline-primary"> See all orders  </a>
+        </div> <!-- card-body .// -->
+      </article> <!-- card.// -->
+  
+    </main> <!-- col.// -->
+  </div>
+  
+  </div> <!-- container .//  -->
+  </section>
+<app-footer></app-footer>

@@ -1,9 +1,6 @@
 /* ==== BASE STYLES ====*/
 /* ==================== GLOBAL STYLES ======================= */
-@import url('../fonts/Inter-web/inter.css');
-html {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px; }
+
 .btn {
   cursor: pointer !important;
 }
@@ -367,7 +364,7 @@ article:after,
   color: #212529; }
 
 .b {
-  font-weight: 600; }
+  font-weight: 500; }
 
 .white {
   color: #fff; }
@@ -417,7 +414,7 @@ p:last-child {
 
 /* ================== header main ==================  */
 .header-top-light .nav-link {
-  color: #969696; }
+  color: #777676; }
   .header-top-light .nav-link:hover {
     color: #212529; }
 
@@ -465,13 +462,16 @@ p:last-child {
     display: inline-block;
     width: 36px;
     height: 30px;
-    color: #969696; }
+    color: #8b8b8b; 
+    text-align: center;
+  }
     .widget-header .icon-area .notify {
       position: absolute;
       top: 0px;
-      right: 8%; }
+      right: 8%; 
+    }
   .widget-header .icon {
-    color: #969696; }
+    color: #777676; }
     .widget-header .icon .notify {
       position: absolute;
       top: 0;
@@ -502,7 +502,7 @@ p:last-child {
 .section-footer .logo-footer {
   height: 40px; }
 .section-footer .title {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 16px;
   font-size: 18px; }
 
@@ -536,15 +536,26 @@ p:last-child {
 
 .btn-twitter {
   background-color: #42AEEC;
-  color: #fff; }
+  color: #fff; 
+}
   .btn-twitter:hover {
-    color: #fff; }
+    color: #fff; 
+  }
+  .btn-guest {
+    background-color: rgb(114, 179, 223);
+    color: #fff; 
+  }
+    .btn-guest:hover {
+      font-weight: bold !important;
+      color: #fff !important; 
+    }
+  
 
 .btn-google {
   background-color: #af0000;
-  color: #fff; }
+  color: #fff !important; }
   .btn-google:hover {
-    color: #fff; }
+    color: #fff !important; }
 
 .btn-icon {
   width: calc(1.5em + 0.9rem + 2px);
@@ -558,7 +569,7 @@ p:last-child {
   background-color: #fff;
   border-color: #e5e7ea; }
   .btn-light i {
-    color: #969696; }
+    color: #777676; }
   .btn-light:hover {
     background-color: #fff;
     border-color: #9099a6; }
@@ -852,7 +863,7 @@ a[class*='card'] {
   overflow: hidden;
   min-height: 410px; }
   .card-category .card-title {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px; }
   .card-category .img-wrap {
     overflow: hidden;
@@ -1001,15 +1012,15 @@ a[class*='card'] {
   font-weight: 300;
   border-radius: 3rem;
   color: #fff;
-  background-color: #fa3434; }
+  background-color: #ff6a00; }
 
   .price {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: #212529;
 }
 .price-old {
-  color: #969696;
+  color: #777676;
   margin-left: 3px;
   font-size: 85%; }
 

@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { SharedModule } from './components/shared/shared/shared.module';
+import { MaterialModule } from './modules/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './components/default-pages/cart/cart.component';
 import { LoginComponent } from './components/setup/login/login.component';
 import { SignupComponent } from './components/setup/signup/signup.component';
@@ -25,8 +24,21 @@ import { TransactionsComponent } from './components/account-detail/transactions/
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { ConfirmationComponent } from './components/common/confirmation/confirmation.component';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angularx-social-login";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/common/page-not-found/page-not-found.component';
 
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("111415594140-nig8df0731ghjqdv4pctj259seeru58v.apps.googleusercontent.com")
+  },
+]);
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,8 +58,8 @@ import { PageNotFoundComponent } from './components/common/page-not-found/page-n
     FooterComponent,
     HeaderComponent,
     ConfirmationComponent,
-    PageNotFoundComponent
-    // SharedModule
+    PageNotFoundComponent,
+    
    
   ],
   imports: [
@@ -57,10 +69,19 @@ import { PageNotFoundComponent } from './components/common/page-not-found/page-n
     HttpClientModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    SocialLoginModule,
+    NoopAnimationsModule,
+    ReactiveFormsModule,
+    MaterialModule
 
   ],
-  providers: [ ],
+  providers: [ 
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
