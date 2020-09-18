@@ -462,7 +462,7 @@ p:last-child {
     display: inline-block;
     width: 36px;
     height: 30px;
-    color: #8b8b8b; 
+    color: #111111; 
     text-align: center;
   }
     .widget-header .icon-area .notify {

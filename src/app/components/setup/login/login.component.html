@@ -34,38 +34,9 @@
       </div>
     </div>
 </div>
-<section class="section-conten padding-y" style="min-height:84vh">
+ -->
 
- ============================ COMPONENT LOGIN   ================================= 
-    <div class="card mx-auto card-wh">
-        <div class="card-body">
-        <h4 class="card-title mb-4">Sign in</h4>
-        <form>
-            <a href="#" class="btn btn-guest btn-block mb-2"> <i class="fa fa-user-secret"></i> &nbsp; Signin as Guest</a>
-            <a (click)="signInWithGoogle()" class="btn btn-google btn-block mb-4"> <i class="fab fa-google"></i> &nbsp;  Sign in with Google</a>
-            <div class="form-group">
-         <input name="" class="form-control" placeholder="Username" type="text">
-            </div> 
-            <div class="form-group">
-        <input name="" class="form-control" placeholder="Password" type="password">
-            </div> 
-            
-            <div class="form-group">
-              <a href="#" class="float-right">Forgot password?</a> 
-             <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block"> Login  </button>
-            </div>    
-        </form>
-        </div>
-      </div> 
-  
-       <p class="text-center mt-4">Don't have account? <a href="#">Sign up</a></p>
-       <br><br>
-  </section> -->
-
-  <section class="container">
+<section class="container">
     <div class="mx-auto my-4" style="min-height: 60vh; max-width: 500px;">
       <div class="card mx-auto p-3">
         <div class="card-body">
@@ -75,20 +46,19 @@
               <div class="col-md-12">
                 <mat-form-field>
                   <mat-label>Email</mat-label>
-                  <input matInput type="email" formControlName="email"
+                  <input matInput type="email" formControlast_name="email"
                     placeholder="example@xyz.com" required>
                 </mat-form-field>
               </div>
               <div class="col-md-12">
                 <mat-form-field>
                   <mat-label>Password</mat-label>
-                  <input matInput type="password" formControlName="password"
+                  <input matInput type="password" formControlast_name="password"
                     placeholder="Password" required>
                 </mat-form-field>
               </div>
               <div class="col-md-12 mb-3" style="margin-top: -7px;">
                 <a routerLink="/forgot-password" class="pull-right">Forgot password?</a> 
-                <!-- <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label> -->
               </div>
               <div class="col-md-12 ">
                 <button class="btn btn-primary full-width">Login</button>
@@ -105,12 +75,9 @@
                 <div class="pull-right">Don't have account? <a routerLink="/signup">Sign up</a> </div>
               </div>
             </div>
-           
           </form>
         </div>
       </div>
     </div>
-    
   </section>
-  
 <app-footer></app-footer>

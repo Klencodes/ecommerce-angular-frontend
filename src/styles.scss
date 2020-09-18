@@ -455,3 +455,26 @@ mat-tab label {
   font-size: 24px;
   font-weight: 500;
 }
+.error-txt {
+  padding: 70px 15px;
+  box-shadow: 0px 5px 17px 0px rgba(90, 91, 95, 0.1);
+}
+.error-txt h1 {
+  font-size: 90px;
+}
+.error-txt span {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 25px;
+}
+.white-bg {
+  background-color: #ffff !important;
+}
+
+.mr-1 {
+  margin-right: 1rem !important;
+}
+
+.mr-2 {
+  margin-right: 2rem !important;
+}

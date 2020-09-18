@@ -1,7 +1,8 @@
+
+import {environment} from 'src/environments/environment';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AbstractControl, AsyncValidatorFn} from '@angular/forms';
-import {environment} from 'src/environments/environment';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable, timer} from 'rxjs';
 

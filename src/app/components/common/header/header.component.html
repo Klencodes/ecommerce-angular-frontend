@@ -4,7 +4,8 @@
       <div class="row align-items-center">
         <div class="col-sm-3">
           <a routerLink="/" class="brand-wrap">
-            <img class="logo" src="assets/img/logo.png">
+            <!-- <img class="logo" src="assets/img/logo.png"> -->
+            <h2>LOGO</h2>
           </a>
         </div>
         <div class="col-xl-6 col-lg-6">
@@ -32,7 +33,7 @@
             <div class="widget-header mr-3 removed-mt cursor-pointer">
               <a class="widget-view" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <div class="icon-area">
-                  <i class="fa fa-user"></i>
+                  <i class="ti-user"></i>
                 </div>
                 <small class="text">{{authState === false ? 'Login' : 'Hi user '}} </small>
               </a>
@@ -56,7 +57,7 @@
                 <div class="dropdown cart-ps">
                   <a  class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <div class="icon-area">
-                      <i class="fa fa-shopping-cart"></i>
+                      <i class="ti-shopping-cart"></i>
                       <span class="notify">
                         <div class="qty">{{cartData.data[0].numInCart !== 0 ? cartData.data.length : 0}}</div>
                       </span>
@@ -130,7 +131,7 @@
               <a class="nav-link" href="#">Sell with us</a>
             </li>
           </ul>
-          <ul class="navbar-nav ml-md-auto">
+          <!-- <ul class="navbar-nav ml-md-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">Get the app</a>
             </li>
@@ -143,7 +144,7 @@
                 <a class="dropdown-item" href="#">Chinese</a>
               </div>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </nav>

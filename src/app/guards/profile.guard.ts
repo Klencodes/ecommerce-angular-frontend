@@ -20,7 +20,7 @@ if (this.userService.auth) {
 return true;
 }
 
-this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}});
+this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}}).then();
 return false;
 
 }

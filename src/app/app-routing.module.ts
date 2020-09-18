@@ -9,7 +9,7 @@ import { SignupComponent } from './components/setup/signup/signup.component';
 import { LoginComponent } from './components/setup/login/login.component';
 import { ResetPasswordComponent } from './components/setup/reset-password/reset-password.component';
 import { AccountComponent } from './components/account-detail/account/account.component';
-import { OrderHistoryComponent } from './components/account-detail/order-history/order-history.component';
+// import { OrderHistoryComponent } from './components/order/order-history/order-history.component';
 import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
 import { ConfirmationComponent } from './components/common/confirmation/confirmation.component';
 import { ProfileGuard } from './guards/profile.guard';
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'confirmation', component: ConfirmationComponent, canActivate: [ProfileGuard] },
   // {path: 'account', component : AccountComponent, children: [
-  //   {path: 'account/orders', component : OrderHistoryComponent, canActivate: [ProfileGuard]},
+  // {path: 'account/orders', component : OrderHistoryComponent, canActivate: [ProfileGuard]},
   //   {path: 'account/transactions', component : TransactionsComponent, canActivate: [ProfileGuard]}
   // ]},
   {path: 'account', component : AccountComponent, canActivate: [ProfileGuard]},

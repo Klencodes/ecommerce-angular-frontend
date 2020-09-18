@@ -19,7 +19,7 @@ import { OrdersComponent } from './components/order/orders/orders.component';
 import { OrderDetailComponent } from './components/order/order-detail/order-detail.component';
 import { ResetPasswordComponent } from './components/setup/reset-password/reset-password.component';
 import { AccountComponent } from './components/account-detail/account/account.component';
-import { OrderHistoryComponent } from './components/account-detail/order-history/order-history.component';
+import { OrderHistoryComponent } from './components/order/order-history/order-history.component';
 import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HeaderComponent } from './components/common/header/header.component';

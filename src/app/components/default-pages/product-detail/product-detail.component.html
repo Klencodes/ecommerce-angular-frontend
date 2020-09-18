@@ -78,31 +78,30 @@
                 min="1"
                 readonly
                 #quantity
-                value="{{product?.quantity >= 1 ? 1: 0}}"
-         >
+                value="{{product?.quantity >= 1 ? 1: 0}}">
                 <div class="input-group-append">
                   <button class="btn btn-light qty-up" (click)="Increase()" >+ </button>
                 </div>
               </div>
-            </div> <!-- col.// -->
+            </div> 
             <div class="form-group col-md">
               <button class="btn btn-primary" [class.disabled]="product.quantity < 1"  (click)="addToCart(product?.id)">
-                <i class="fas fa-shopping-cart"></i> <span class="text">{{product.quantity < 1 ? "NO STOCK" : "Add to cart" }}</span>
-              </button> -->
-              <a href="#" class="btn btn-light">
-                <i class="fas fa-envelope"></i> <span class="text">Contact supplier</span>
+                <i class="fa fa-shopping-cart"></i> <span class="text">{{product.quantity < 1 ? "NO STOCK" : "Add to cart" }}</span>
+              </button>
+              <a href="#" class=" btn btn-light">
+                <i class="fa fa-envelope"></i> <span class="text">Contact supplier</span>
               </a>
-            </div> <!-- col.// -->
-          </div> <!-- row.// -->
+            </div> 
+          </div> 
 
-        </article> <!-- product-info-aside .// -->
-      </main> <!-- col.// -->
-    </div> <!-- row.// -->
+        </article> 
+      </main> 
+    </div>
 
     <!-- ================ ITEM DETAIL END .// ================= -->
 
 
-  </div> <!-- container .//  -->
+  </div> 
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
 

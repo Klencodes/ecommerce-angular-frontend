@@ -34,12 +34,12 @@
               "src/assets/css/responsive.css",
               "src/assets/css/ui.css",
               "node_modules/ngx-toastr/toastr.css",
-              "src/assets/fonts/fontawesome/css/all.min.css"
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/themify-icons.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/wizard.js"
+              "src/assets/js/bootstrap.min.js"
             ]
           },
           "configurations": {
