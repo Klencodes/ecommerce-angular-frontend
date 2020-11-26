@@ -448,7 +448,7 @@ mat-tab label {
   border: 2px solid #ff6a00 !important;
 }
 .register-wh {
-  width: 850px !important;
+  max-width: 850px !important;
   margin: 40px auto;
 }
 .log-sign-tx {
@@ -477,4 +477,35 @@ mat-tab label {
 
 .mr-2 {
   margin-right: 2rem !important;
+}
+
+.mr-3 {
+  margin-right: 3rem !important;
+}
+
+.mr-4 {
+  margin-right: 4rem !important;
+}
+
+.to-uppercase-bold {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+}
+.text-primary-bold {
+  font-weight: 700;
+  color: #ff6a00;
+}
+.text-primary-light {
+  font-weight: 400;
+  color: #ff6a00;
+}
+.bold-text {
+ font-weight: 600;
+}
+.fa-icon-margin {
+  margin: 0 4px;
+}
+.payment-text {
+  font-weight: 500;
 }

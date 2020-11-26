@@ -5,7 +5,7 @@
       <div class="card-body">
 
         <div class="row">
-          <aside class="col-lg col-md-3 flex-lg-grow-0">
+          <aside class="col-lg col-md-3 col-md d-none d-lg-block flex-lg-grow-0">
             <h6>MY MARKETS</h6>
             <nav class="nav-home-aside">
               <ul class="menu-category">
@@ -174,15 +174,13 @@
     </div>
 
   </section> -->
- 
-  <section class="padding-bottom-sm">
 
+  <section class="padding-bottom-sm">
     <header class="section-heading heading-line">
       <h4 class="title-section text-uppercase">Recommended items</h4>
     </header>
-
     <div class="row row-sm">
-      <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-2" *ngFor="let product of products">
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-2 " *ngFor="let product of products">
         <div class="card card-sm card-product-grid">
           <div class="img-wrap"> <img [src]="product.image" alt="{{product.name}}" (click)="selectProduct(product.id)">
           </div>
@@ -190,15 +188,17 @@
             <div class="title">{{product.name.substr(0, 25)}}</div>
             <div class="mt-2">
               <var class="price">{{product.price | currency:'GHS '}}</var>
-              <div class="btn btn-sm btn-primary float-right" disabled="product.quantity < 1"
-                [class.disabled]="product.quantity < 1" (click)="AddProduct(product.id)">
-                {{product.quantity < 1 ? "NO STOCK" : "Add to cart" }}</div>
             </div>
           </figcaption>
+          <div class="btn btn-sm btn-primary add-to-cart-position" disabled="product.quantity < 1"
+            [class.disabled]="product.quantity < 1" (click)="AddProduct(product.id)">
+            {{product.quantity < 1 ? "NO STOCK" : "Add to cart" }}
+          </div>
         </div>
       </div>
-    </div> 
+    </div>
   </section>
+
   <section class="padding-bottom">
     <header class="section-heading heading-line">
       <h4 class="title-section text-uppercase">Electronics</h4>
@@ -289,9 +289,9 @@
               </a>
             </li>
           </ul>
-        </div> 
-      </div> 
-    </div> 
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- =============== SECTION REQUEST =============== -->
@@ -361,7 +361,7 @@
 <section class="section-subscribe padding-y-lg">
   <div class="container">
 
-    <p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox
+    <p class="pb-2 text-center">Delivering the latest product trends and industry news straight to your inbox
     </p>
 
     <div class="row justify-content-md-center">
@@ -374,7 +374,7 @@
             <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
           </div> <!-- col.// -->
         </form>
-        <small class="form-text text-white-50">We’ll never share your email address with a third-party. </small>
+        <small class="form-text text-bold">We’ll never share your email address with a third-party. </small>
       </div> <!-- col-md-6.// -->
     </div>
 

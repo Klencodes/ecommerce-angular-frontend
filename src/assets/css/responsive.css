@@ -97,6 +97,10 @@
 
 @media all and (max-width: 768px) {
 
+  .card-product-grid .info-wrap {
+    padding: 10px !important;
+}
+
   .nav-home-aside {
     width: 100%; 
   }
@@ -154,9 +158,9 @@
   .mobile-block {
     display: block; }
 
-  .padding-y {
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    .padding-y {
+      padding-top: 5px !important;
+      padding-bottom: 5px !important; }
 
   .padding-top {
     padding-top: 20px; }
@@ -164,9 +168,10 @@
   .padding-bottom {
     padding-bottom: 20px; }
 
-  .padding-y-lg {
-    padding-top: 30px;
-    padding-bottom: 30px; }
+    .padding-y-lg {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+  }
 
   .padding-top-lg {
     padding-top: 30px; }
@@ -316,7 +321,6 @@
     height: 100px !important;
   }
   .search-header select {
-    flex-basis: 62px !important;
-    flex-grow: 0 !important;
+    flex-basis: 105px !important;
 }
 }

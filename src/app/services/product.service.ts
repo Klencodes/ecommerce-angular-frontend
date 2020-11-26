@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {ProductModelServer, ServerResponse} from "src/app/models/product.model";
-import {environment} from "../../environments/environment";
+import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { ProductModelServer, ServerResponse } from "src/app/models/product.model";
+import { environment } from "../../environments/environment";
 
 
 @Injectable({
@@ -15,14 +15,14 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-/* GET ALL PRODUCTS FROM SERVER */
-  getAllProducts(limitOfResults=10): Observable<ServerResponse> {
+  /* GET ALL PRODUCTS FROM SERVER */
+  getAllProducts(limitOfResults = 10): Observable<ServerResponse> {
     return this.httpClient.get<ServerResponse>(this.ServerURL + 'products', {
       params: {
         limit: limitOfResults.toString()
       }
     });
-  } 
+  }
 
   /* GET SINGLE PRODUCT FROM SERVER */
   getSingleProduct(id: Number): Observable<ProductModelServer> {

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Mega Shop';
+  title = 'Mega Online';
 
   constructor(private router: Router) {}
   ngOnInit() {

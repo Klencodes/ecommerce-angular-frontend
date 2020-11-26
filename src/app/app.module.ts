@@ -12,7 +12,6 @@ import { CartComponent } from './components/default-pages/cart/cart.component';
 import { LoginComponent } from './components/setup/login/login.component';
 import { SignupComponent } from './components/setup/signup/signup.component';
 import { CheckoutComponent } from './components/default-pages/checkout/checkout.component';
-import { ShopCatComponent } from './components/default-pages/shop-cat/shop-cat.component';
 import { ShopComponent } from './components/default-pages/shop/shop.component';
 import { ProductDetailComponent } from './components/default-pages/product-detail/product-detail.component';
 import { OrdersComponent } from './components/order/orders/orders.component';
@@ -27,6 +26,7 @@ import { ConfirmationComponent } from './components/common/confirmation/confirma
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angularx-social-login";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/common/page-not-found/page-not-found.component';
+import { HelpComponent } from './components/setup/help/help.component';
 
 
 let config = new AuthServiceConfig([
@@ -46,7 +46,6 @@ export function provideConfig() {
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
-    ShopCatComponent,
     ShopComponent,
     ProductDetailComponent,
     OrdersComponent,
@@ -59,6 +58,7 @@ export function provideConfig() {
     HeaderComponent,
     ConfirmationComponent,
     PageNotFoundComponent,
+    HelpComponent,
     
    
   ],
