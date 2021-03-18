@@ -151,49 +151,20 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 <section class="section-content padding-y">
   <div class="container">
   
   <div class="row">
     <aside class="col-md-3">
       <ul class="list-group">
-        <a class="list-group-item active" href="#"> Account overview  </a>
-        <a class="list-group-item" href="#"> My Orders </a>
-        <a class="list-group-item" href="#"> My wishlist </a>
-        <a class="list-group-item" href="#"> Return and refunds </a>
-        <a class="list-group-item" href="#">Settings </a>
-        <a class="list-group-item" href="#"> My Selling Items </a>
-        <a class="list-group-item" href="#"> Received orders </a>
+        <a class="list-group-item active" routerLink="account/orders"> Account overview  </a>
+        <a class="list-group-item" routerLink=""> My Orders </a>
+        <a class="list-group-item" routerLink=""> My wishlist </a>
+        <a class="list-group-item" routerLink=""> Return and refunds </a>
+        <a class="list-group-item" routerLink="">Settings </a>
+        <a class="list-group-item" routerLink=""> My Selling Items </a>
+        <a class="list-group-item" routerLink=""> Received orders </a>
         <a class="btn btn-light btn-block mt-3" (click)="logout()"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
       </ul>
     </aside> <!-- col.// -->
@@ -208,7 +179,7 @@
               <div class="text">
                 <strong>  {{myUser?.name || (myUser.first_name + ' ' + myUser.last_name)}} </strong> <br> 
                 {{myUser.email}} <br> 
-                <a href="#">Edit</a>
+                <a routerLink="">Edit</a>
               </div>
           </figure>
           <hr>
@@ -216,7 +187,7 @@
             <i class="fa fa-map-marker text-muted"></i> &nbsp; My address:  
              <br>
             Tashkent city, Street name, Building 123, House 321 &nbsp; 
-            <a href="#" class="btn-link"> Edit</a>
+            <a routerLink="" class="btn-link"> Edit</a>
           </p>
   
           
@@ -289,7 +260,7 @@
           </div> <!-- col.// -->
         </div> <!-- row.// -->
   
-        <a href="#" class="btn btn-outline-primary"> See all orders  </a>
+        <a routerLink="" class="btn btn-outline-primary"> See all orders  </a>
         </div> <!-- card-body .// -->
       </article> <!-- card.// -->
   
@@ -298,4 +269,4 @@
   
   </div> <!-- container .//  -->
   </section>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

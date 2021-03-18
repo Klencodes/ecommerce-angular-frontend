@@ -14,12 +14,7 @@ import { SignupComponent } from './components/setup/signup/signup.component';
 import { CheckoutComponent } from './components/default-pages/checkout/checkout.component';
 import { ShopComponent } from './components/default-pages/shop/shop.component';
 import { ProductDetailComponent } from './components/default-pages/product-detail/product-detail.component';
-import { OrdersComponent } from './components/order/orders/orders.component';
-import { OrderDetailComponent } from './components/order/order-detail/order-detail.component';
 import { ResetPasswordComponent } from './components/setup/reset-password/reset-password.component';
-import { AccountComponent } from './components/account-detail/account/account.component';
-import { OrderHistoryComponent } from './components/order/order-history/order-history.component';
-import { TransactionsComponent } from './components/account-detail/transactions/transactions.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { ConfirmationComponent } from './components/common/confirmation/confirmation.component';
@@ -27,6 +22,7 @@ import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angul
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/common/page-not-found/page-not-found.component';
 import { HelpComponent } from './components/setup/help/help.component';
+import { AccountModule } from './components/account/account.module';
 
 
 let config = new AuthServiceConfig([
@@ -48,12 +44,7 @@ export function provideConfig() {
     CheckoutComponent,
     ShopComponent,
     ProductDetailComponent,
-    OrdersComponent,
-    OrderDetailComponent,
     ResetPasswordComponent,
-    AccountComponent,
-    OrderHistoryComponent,
-    TransactionsComponent,
     FooterComponent,
     HeaderComponent,
     ConfirmationComponent,
@@ -73,7 +64,8 @@ export function provideConfig() {
     SocialLoginModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    AccountModule
 
   ],
   providers: [ 

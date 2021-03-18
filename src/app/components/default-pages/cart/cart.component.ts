@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   cartData: CartModelServer;
   cartTotal: Number;
   subTotal: Number;
+  // discount : number = 0.04;
 
   constructor( public cartService: CartService ) { }
 
